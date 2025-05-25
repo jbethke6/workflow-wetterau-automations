@@ -33,7 +33,7 @@ const HeroSection = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 text-lg font-montserrat"
+                className="border-2 border-white text-white hover:bg-white hover:text-blue-900 bg-transparent px-8 py-4 text-lg font-montserrat transition-colors duration-300"
                 onClick={() => document.getElementById('solutions')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Wie wir Ihnen 10h/Woche sparen
@@ -42,32 +42,59 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Column - Hero Image */}
+          {/* Right Column - Hero Image with improved comparison */}
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop&crop=center" 
-                alt="Professionelle Arbeitsplatz mit Laptop und Dokumenten"
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center" 
+                alt="Moderner Arbeitsplatz mit Automatisierung und Technologie"
                 className="w-full h-96 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent"></div>
+              
+              {/* Improved Before/After Comparison */}
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                  <div className="grid grid-cols-2 gap-4 text-center">
-                    <div>
-                      <div className="text-red-400 text-sm mb-2 font-montserrat font-semibold">VORHER</div>
-                      <div className="bg-red-500/20 rounded-lg p-3">
-                        <div className="text-sm font-open-sans">📄 Papierkram: 15h/Woche</div>
-                        <div className="text-sm font-open-sans">❌ Fehler & Verzögerungen</div>
-                        <div className="text-sm font-open-sans">😰 Stress & Überstunden</div>
+                <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 border border-white/30">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* VORHER */}
+                    <div className="text-center">
+                      <div className="bg-red-500 text-white text-sm font-bold py-2 px-4 rounded-lg mb-4 font-montserrat">
+                        VORHER
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex items-center text-gray-800 text-sm font-open-sans">
+                          <div className="w-3 h-3 bg-red-500 rounded-full mr-3"></div>
+                          <span>📄 Papierkram: 15h/Woche</span>
+                        </div>
+                        <div className="flex items-center text-gray-800 text-sm font-open-sans">
+                          <div className="w-3 h-3 bg-red-500 rounded-full mr-3"></div>
+                          <span>❌ Fehler & Verzögerungen</span>
+                        </div>
+                        <div className="flex items-center text-gray-800 text-sm font-open-sans">
+                          <div className="w-3 h-3 bg-red-500 rounded-full mr-3"></div>
+                          <span>😰 Stress & Überstunden</span>
+                        </div>
                       </div>
                     </div>
-                    <div>
-                      <div className="text-green-400 text-sm mb-2 font-montserrat font-semibold">NACHHER</div>
-                      <div className="bg-green-500/20 rounded-lg p-3">
-                        <div className="text-sm font-open-sans">⚡ Büroarbeit: 3h/Woche</div>
-                        <div className="text-sm font-open-sans">✅ Fehlerfreie Prozesse</div>
-                        <div className="text-sm font-open-sans">😊 Mehr Zeit fürs Kerngeschäft</div>
+                    
+                    {/* NACHHER */}
+                    <div className="text-center">
+                      <div className="bg-green-500 text-white text-sm font-bold py-2 px-4 rounded-lg mb-4 font-montserrat">
+                        NACHHER
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex items-center text-gray-800 text-sm font-open-sans">
+                          <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                          <span>⚡ Büroarbeit: 3h/Woche</span>
+                        </div>
+                        <div className="flex items-center text-gray-800 text-sm font-open-sans">
+                          <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                          <span>✅ Fehlerfreie Prozesse</span>
+                        </div>
+                        <div className="flex items-center text-gray-800 text-sm font-open-sans">
+                          <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                          <span>😊 Mehr Zeit fürs Kerngeschäft</span>
+                        </div>
                       </div>
                     </div>
                   </div>

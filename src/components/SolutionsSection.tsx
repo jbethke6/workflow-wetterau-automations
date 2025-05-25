@@ -71,8 +71,8 @@ const SolutionsSection = () => {
             </div>
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop&crop=center" 
-                alt="Automatisierung und Technologie Workflow"
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop&crop=center" 
+                alt="KI-gesteuerte Automatisierung für Handwerk und Immobilien"
                 className="w-full h-64 object-cover rounded-lg"
               />
             </div>

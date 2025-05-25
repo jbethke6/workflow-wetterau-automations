@@ -53,8 +53,8 @@ const ProblemsSection = () => {
 
           <div>
             <img 
-              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=700&fit=crop&crop=center" 
-              alt="Gestresster Geschäftsmann mit Papierkram"
+              src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=600&h=700&fit=crop&crop=center" 
+              alt="Handwerker und Immobilienmakler bei der Arbeit"
               className="w-full h-96 object-cover rounded-2xl shadow-lg"
             />
           </div>
