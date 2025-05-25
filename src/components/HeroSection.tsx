@@ -42,61 +42,30 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Column - Hero Image with improved comparison */}
+          {/* Right Column - Hero Image */}
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center" 
-                alt="Moderner Arbeitsplatz mit Automatisierung und Technologie"
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&crop=center" 
+                alt="KI-gestützte Automatisierung für Handwerk und Immobilien - intelligente Workflows"
                 className="w-full h-96 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent"></div>
               
-              {/* Improved Before/After Comparison */}
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 border border-white/30">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {/* VORHER */}
-                    <div className="text-center">
-                      <div className="bg-red-500 text-white text-sm font-bold py-2 px-4 rounded-lg mb-4 font-montserrat">
-                        VORHER
-                      </div>
-                      <div className="space-y-3">
-                        <div className="flex items-center text-gray-800 text-sm font-open-sans">
-                          <div className="w-3 h-3 bg-red-500 rounded-full mr-3"></div>
-                          <span>📄 Papierkram: 15h/Woche</span>
-                        </div>
-                        <div className="flex items-center text-gray-800 text-sm font-open-sans">
-                          <div className="w-3 h-3 bg-red-500 rounded-full mr-3"></div>
-                          <span>❌ Fehler & Verzögerungen</span>
-                        </div>
-                        <div className="flex items-center text-gray-800 text-sm font-open-sans">
-                          <div className="w-3 h-3 bg-red-500 rounded-full mr-3"></div>
-                          <span>😰 Stress & Überstunden</span>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* NACHHER */}
-                    <div className="text-center">
-                      <div className="bg-green-500 text-white text-sm font-bold py-2 px-4 rounded-lg mb-4 font-montserrat">
-                        NACHHER
-                      </div>
-                      <div className="space-y-3">
-                        <div className="flex items-center text-gray-800 text-sm font-open-sans">
-                          <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                          <span>⚡ Büroarbeit: 3h/Woche</span>
-                        </div>
-                        <div className="flex items-center text-gray-800 text-sm font-open-sans">
-                          <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                          <span>✅ Fehlerfreie Prozesse</span>
-                        </div>
-                        <div className="flex items-center text-gray-800 text-sm font-open-sans">
-                          <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                          <span>😊 Mehr Zeit fürs Kerngeschäft</span>
-                        </div>
-                      </div>
-                    </div>
+              {/* Floating Benefits Cards */}
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3 text-center">
+                    <div className="text-2xl font-bold text-orange-500 font-montserrat">10h</div>
+                    <div className="text-xs text-gray-800 font-open-sans">Zeit gespart/Woche</div>
+                  </div>
+                  <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3 text-center">
+                    <div className="text-2xl font-bold text-green-600 font-montserrat">60%</div>
+                    <div className="text-xs text-gray-800 font-open-sans">Kosteneinsparung</div>
+                  </div>
+                  <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3 text-center">
+                    <div className="text-2xl font-bold text-blue-600 font-montserrat">90%</div>
+                    <div className="text-xs text-gray-800 font-open-sans">Weniger Fehler</div>
                   </div>
                 </div>
               </div>

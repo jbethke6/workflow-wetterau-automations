@@ -12,6 +12,7 @@ import ServicesSection from '../components/ServicesSection';
 import PricingSection from '../components/PricingSection';
 import ContactSection from '../components/ContactSection';
 import Navigation from '../components/Navigation';
+import ChatAssistant from '../components/ChatAssistant';
 
 const Index = () => {
   return (
@@ -25,6 +26,7 @@ const Index = () => {
       <ServicesSection />
       <PricingSection />
       <ContactSection />
+      <ChatAssistant />
     </div>
   );
 };
