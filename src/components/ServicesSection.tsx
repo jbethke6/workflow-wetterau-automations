@@ -63,29 +63,29 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Unsere <span className="text-orange-500">Kernleistungen</span>
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            Unsere <span className="text-orange-600">Kernleistungen</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
             Fünf bewährte Automatisierungsbereiche, die sofort spürbare Verbesserungen in Ihrem Betrieb bewirken
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, index) => (
             <Card key={index} className="p-6 hover:shadow-lg transition-shadow h-full">
-              <div className="text-orange-500 mb-4">
-                <service.icon className="h-10 w-10" />
+              <div className="text-orange-600 mb-4">
+                <service.icon className="h-8 w-8 lg:h-10 lg:w-10" />
               </div>
               
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3">
                 {service.title}
               </h3>
               
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-6 text-sm lg:text-base">
                 {service.description}
               </p>
               
@@ -93,7 +93,7 @@ const ServicesSection = () => {
                 <h4 className="font-semibold text-gray-900 text-sm">Ihre Vorteile:</h4>
                 {service.benefits.map((benefit, i) => (
                   <div key={i} className="flex items-start">
-                    <div className="bg-green-500 rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></div>
+                    <div className="bg-orange-600 rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></div>
                     <span className="text-sm text-gray-700">{benefit}</span>
                   </div>
                 ))}
@@ -102,20 +102,20 @@ const ServicesSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <div className="bg-blue-50 rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-blue-900 mb-4">
+        <div className="text-center mt-8 lg:mt-12">
+          <div className="bg-gray-50 rounded-2xl p-6 lg:p-8 max-w-4xl mx-auto">
+            <h3 className="text-xl lg:text-2xl font-bold text-gray-700 mb-4">
               Maßgeschneiderte Lösungen für Ihr Unternehmen
             </h3>
-            <p className="text-lg text-gray-700 mb-6">
+            <p className="text-base lg:text-lg text-gray-600 mb-6">
               Jede Automatisierungslösung wird individuell an Ihre Bedürfnisse angepasst. 
               Wir arbeiten nur mit bewährten Tools und sorgen für nahtlose Integration in Ihre bestehenden Systeme.
             </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
-              <div className="bg-white rounded-lg px-4 py-2">n8n Platform</div>
-              <div className="bg-white rounded-lg px-4 py-2">DSGVO-konform</div>
-              <div className="bg-white rounded-lg px-4 py-2">24/7 Support</div>
-              <div className="bg-white rounded-lg px-4 py-2">Hosting in Deutschland</div>
+            <div className="flex flex-wrap justify-center gap-3 lg:gap-4 text-sm text-gray-600">
+              <div className="bg-white rounded-lg px-3 lg:px-4 py-2">n8n Platform</div>
+              <div className="bg-white rounded-lg px-3 lg:px-4 py-2">DSGVO-konform</div>
+              <div className="bg-white rounded-lg px-3 lg:px-4 py-2">24/7 Support</div>
+              <div className="bg-white rounded-lg px-3 lg:px-4 py-2">Hosting in Deutschland</div>
             </div>
           </div>
         </div>

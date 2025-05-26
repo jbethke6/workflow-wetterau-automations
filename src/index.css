@@ -98,11 +98,11 @@
   }
 
   .btn-primary {
-    @apply bg-orange-500 hover:bg-orange-600 text-white;
+    @apply bg-orange-600 hover:bg-orange-700 text-white;
   }
 
   .btn-secondary {
-    @apply bg-blue-900 hover:bg-blue-800 text-white;
+    @apply bg-gray-700 hover:bg-gray-800 text-white;
   }
 }
 
