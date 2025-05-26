@@ -4,9 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { MessageCircle, X, Send, Phone, Mail, Clock } from 'lucide-react';
+import CalendlyBooking from './CalendlyBooking';
 
 const ChatAssistant = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
       id: 1,
@@ -37,13 +39,33 @@ const ChatAssistant = () => {
     setMessages([...messages, userMessage]);
     setInputMessage("");
 
-    // Simulate bot response
+    // Check if user wants to book consultation
+    if (inputMessage.toLowerCase().includes("beratung") || 
+        inputMessage.toLowerCase().includes("termin") ||
+        inputMessage === "Kostenlose Beratung vereinbaren") {
+      
+      setTimeout(() => {
+        const botMessage = {
+          id: messages.length + 2,
+          text: "Perfekt! Ich öffne direkt unser Buchungssystem für Sie. Dort können Sie Ihren Wunschtermin für die kostenlose Prozessanalyse auswählen.",
+          sender: "bot",
+          timestamp: new Date()
+        };
+        setMessages(prev => [...prev, botMessage]);
+        
+        // Open Calendly after a short delay
+        setTimeout(() => {
+          setIsCalendlyOpen(true);
+        }, 1000);
+      }, 1000);
+      return;
+    }
+
+    // Simulate bot response for other messages
     setTimeout(() => {
       let botResponse = "";
       if (inputMessage.toLowerCase().includes("preis") || inputMessage.toLowerCase().includes("kosten")) {
         botResponse = "Gerne zeige ich Ihnen unsere transparenten Preismodelle! Wir bieten vier verschiedene Pakete von 299€ bis zum individuellen Enterprise-Paket. Soll ich Sie direkt zur Preisübersicht weiterleiten?";
-      } else if (inputMessage.toLowerCase().includes("beratung") || inputMessage.toLowerCase().includes("termin")) {
-        botResponse = "Perfekt! Ich kann Ihnen sofort einen Termin für eine kostenlose Prozessanalyse vereinbaren. Welcher Zeitraum passt Ihnen am besten? Vormittags oder nachmittags?";
       } else if (inputMessage.toLowerCase().includes("zeit") || inputMessage.toLowerCase().includes("stunden")) {
         botResponse = "Unsere Kunden sparen durchschnittlich 10 Stunden pro Woche durch unsere Automatisierungslösungen. Das entspricht über 500 Stunden im Jahr - Zeit, die Sie in Ihr Kerngeschäft investieren können!";
       } else {
@@ -68,6 +90,10 @@ const ChatAssistant = () => {
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
+  };
+
+  const closeCalendly = () => {
+    setIsCalendlyOpen(false);
   };
 
   return (
@@ -189,6 +215,9 @@ const ChatAssistant = () => {
           </Card>
         </div>
       )}
+
+      {/* Calendly Booking Popup */}
+      <CalendlyBooking isOpen={isCalendlyOpen} onClose={closeCalendly} />
     </>
   );
 };
