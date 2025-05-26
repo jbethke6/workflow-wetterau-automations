@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { MessageCircle, X, Send, Phone, Mail, Clock } from 'lucide-react';
+import { MessageCircle, X, Send, Phone, Mail, Clock, Calendar } from 'lucide-react';
 import CalendlyBooking from './CalendlyBooking';
 
 const ChatAssistant = () => {
@@ -92,14 +92,28 @@ const ChatAssistant = () => {
     setIsOpen(!isOpen);
   };
 
+  const openCalendly = () => {
+    setIsCalendlyOpen(true);
+  };
+
   const closeCalendly = () => {
     setIsCalendlyOpen(false);
   };
 
   return (
     <>
-      {/* Chat Trigger Button */}
-      <div className="fixed bottom-6 right-6 z-50">
+      {/* Floating Action Buttons */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col space-y-4">
+        {/* Calendly Booking Button */}
+        <Button
+          onClick={openCalendly}
+          className="bg-green-500 hover:bg-green-600 text-white rounded-full w-16 h-16 shadow-lg hover:shadow-xl transition-all duration-300"
+          size="lg"
+        >
+          <Calendar className="h-6 w-6" />
+        </Button>
+
+        {/* Chat Trigger Button */}
         <Button
           onClick={toggleChat}
           className="bg-orange-500 hover:bg-orange-600 text-white rounded-full w-16 h-16 shadow-lg hover:shadow-xl transition-all duration-300"
@@ -111,7 +125,7 @@ const ChatAssistant = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-96 max-w-[90vw]">
+        <div className="fixed bottom-28 right-6 z-50 w-96 max-w-[90vw]">
           <Card className="bg-white shadow-2xl border-0 rounded-2xl overflow-hidden">
             {/* Chat Header */}
             <div className="bg-blue-900 text-white p-4">
