@@ -107,7 +107,7 @@ const ChatAssistant = () => {
         {/* Calendly Booking Button */}
         <Button
           onClick={openCalendly}
-          className="bg-green-500 hover:bg-green-600 text-white rounded-full w-16 h-16 shadow-lg hover:shadow-xl transition-all duration-300"
+          className="bg-orange-500 hover:bg-orange-600 text-white rounded-full w-16 h-16 shadow-lg hover:shadow-xl transition-all duration-300"
           size="lg"
         >
           <Calendar className="h-6 w-6" />

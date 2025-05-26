@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from 'lucide-react';
@@ -57,8 +58,8 @@ const HeroSection = () => {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&crop=center" 
-                  alt="KI-gestützte Automatisierung für Handwerk und Immobilien - intelligente Workflows"
+                  src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop&crop=center" 
+                  alt="Automatisierte Systeme und digitale Workflows - Zukunft der Büroautomatisierung"
                   className="w-full h-96 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent"></div>

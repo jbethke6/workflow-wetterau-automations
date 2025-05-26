@@ -22,9 +22,9 @@ const CalendlyBooking = ({ isOpen, onClose }: CalendlyBookingProps) => {
 
   useEffect(() => {
     if (isOpen && window.Calendly) {
-      // Initialize Calendly widget
+      // Initialize Calendly widget with your correct URL
       window.Calendly.initInlineWidget({
-        url: 'https://calendly.com/autoflow-pro/kostenlose-prozessanalyse',
+        url: 'https://calendly.com/bethke-ftr',
         parentElement: document.getElementById('calendly-inline-widget'),
         prefill: {},
         utm: {}
