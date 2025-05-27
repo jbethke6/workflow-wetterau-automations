@@ -14,7 +14,8 @@ const ServicesSection = () => {
         "Integration mit Ihrer bestehenden Buchhaltungssoftware",
         "Mahnwesen und Zahlungserinnerungen automatisiert",
         "Reduzierung der Rechnungsstellung von Tagen auf Stunden"
-      ]
+      ],
+      image: "/lovable-uploads/928e0ad3-4743-4d59-a202-36e4948d1d91.png"
     },
     {
       icon: Calendar,
@@ -25,7 +26,8 @@ const ServicesSection = () => {
         "Automatische Bestätigungen und Erinnerungen",
         "Integration mit WhatsApp und E-Mail",
         "Reduzierung von Terminausfällen um bis zu 70%"
-      ]
+      ],
+      image: "/lovable-uploads/77984400-f083-44ea-8ff7-bd541486e149.png"
     },
     {
       icon: Search,
@@ -36,7 +38,8 @@ const ServicesSection = () => {
         "Automatische Archivierung nach Projektabschluss",
         "Versionskontrolle und Backup-System",
         "Zugriff von überall - auch unterwegs"
-      ]
+      ],
+      image: "/lovable-uploads/8564e40f-1ee8-4e3a-8164-9139168447fd.png"
     },
     {
       icon: MessageSquare,
@@ -47,7 +50,8 @@ const ServicesSection = () => {
         "Automatische Zufriedenheitsabfragen",
         "Integration mit bestehenden E-Mail-Systemen",
         "Nachfass-Automatisierung für bessere Kundenbindung"
-      ]
+      ],
+      image: "/lovable-uploads/454c9234-0608-4281-9e92-85a40ad67e69.png"
     },
     {
       icon: Users,
@@ -58,7 +62,8 @@ const ServicesSection = () => {
         "Lead-Scoring und -Priorisierung",
         "Verkaufspipeline-Automatisierung",
         "360°-Kundensicht für besseren Service"
-      ]
+      ],
+      image: "/lovable-uploads/edf6126a-8f1c-4010-b365-60be063f3bb0.png"
     }
   ];
 
@@ -76,27 +81,38 @@ const ServicesSection = () => {
 
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="p-6 hover:shadow-lg transition-shadow h-full">
-              <div className="text-orange-600 mb-4">
-                <service.icon className="h-8 w-8 lg:h-10 lg:w-10" />
+            <Card key={index} className="hover:shadow-lg transition-shadow h-full overflow-hidden">
+              {/* n8n Screenshot Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={`n8n Automatisierung für ${service.title}`}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
+                <div className="absolute top-4 left-4 text-orange-400">
+                  <service.icon className="h-8 w-8 lg:h-10 lg:w-10" />
+                </div>
               </div>
               
-              <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3">
-                {service.title}
-              </h3>
-              
-              <p className="text-gray-600 mb-6 text-sm lg:text-base">
-                {service.description}
-              </p>
-              
-              <div className="space-y-3">
-                <h4 className="font-semibold text-gray-900 text-sm">Ihre Vorteile:</h4>
-                {service.benefits.map((benefit, i) => (
-                  <div key={i} className="flex items-start">
-                    <div className="bg-orange-600 rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">{benefit}</span>
-                  </div>
-                ))}
+              <div className="p-6">
+                <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3">
+                  {service.title}
+                </h3>
+                
+                <p className="text-gray-600 mb-6 text-sm lg:text-base">
+                  {service.description}
+                </p>
+                
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-gray-900 text-sm">Ihre Vorteile:</h4>
+                  {service.benefits.map((benefit, i) => (
+                    <div key={i} className="flex items-start">
+                      <div className="bg-orange-600 rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></div>
+                      <span className="text-sm text-gray-700">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </Card>
           ))}

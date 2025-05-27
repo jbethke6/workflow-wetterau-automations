@@ -24,8 +24,8 @@ const PricingSection = () => {
   const plans = [
     {
       name: "Starter",
-      setupPrice: "299€",
-      monthlyPrice: "49€",
+      setupPrice: "499€",
+      monthlyPrice: "299€",
       description: "Perfekt für Einzelunternehmer",
       features: [
         "Bis zu 5 Automatisierungsworkflows",
@@ -39,8 +39,8 @@ const PricingSection = () => {
     },
     {
       name: "Professional",
-      setupPrice: "599€",
-      monthlyPrice: "99€",
+      setupPrice: "999€",
+      monthlyPrice: "499€",
       description: "Ideal für kleine Handwerksbetriebe",
       features: [
         "Bis zu 15 Automatisierungsworkflows",
@@ -55,8 +55,8 @@ const PricingSection = () => {
     },
     {
       name: "Business",
-      setupPrice: "999€",
-      monthlyPrice: "199€",
+      setupPrice: "1.999€",
+      monthlyPrice: "999€",
       description: "Für wachsende Unternehmen",
       features: [
         "Unbegrenzte Automatisierungsworkflows",
@@ -312,6 +312,18 @@ const PricingSection = () => {
               >
                 Fragen per E-Mail
               </Button>
+            </div>
+            
+            {/* Add n8n screenshot at the bottom */}
+            <div className="mt-8">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl mx-auto max-w-4xl">
+                <img 
+                  src="/lovable-uploads/e61e520c-4f9d-44be-930d-97394a0103d3.png" 
+                  alt="n8n Automatisierung Workflow Dashboard"
+                  className="w-full h-48 md:h-64 lg:h-80 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent"></div>
+              </div>
             </div>
           </div>
         </div>
