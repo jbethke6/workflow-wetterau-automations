@@ -53,7 +53,7 @@ const ProblemsSection = () => {
 
           <div className="order-first lg:order-last">
             <img 
-              src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=600&h=700&fit=crop&crop=center" 
+              src="/images/roboarm.png" 
               alt="Handwerker und Immobilienmakler bei der Arbeit"
               className="w-full h-64 lg:h-96 object-cover rounded-2xl shadow-lg"
             />
