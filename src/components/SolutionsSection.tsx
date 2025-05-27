@@ -32,7 +32,7 @@ const SolutionsSection = () => {
             <div className="bg-orange-700 rounded-full w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-lg">
               <span className="text-lg md:text-xl lg:text-2xl font-bold font-montserrat text-white">1</span>
             </div>
-            <h3 className="text-base md:text-lg lg:text-xl font-bold mb-2 md:mb-3 font-montserrat">Kostenlose Analyse</h3>
+            <h3 className="text-base md:text-lg lg:text-xl font-bold mb-2 md:mb-3 font-montserrat">Analyse</h3>
             <p className="text-gray-200 font-open-sans text-sm md:text-base">
               Wir identifizieren Ihre zeitraubendsten Prozesse und berechnen Ihr Einsparpotential
             </p>
@@ -73,32 +73,31 @@ const SolutionsSection = () => {
           ref={workflowRef}
           className={`bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 border border-white/20 scroll-animate-scale ${workflowVisible ? 'animate' : ''}`}
         >
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-            <div>
-              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 font-montserrat">
-                Sehen Sie, wie Automatisierung Ihr Unternehmen transformiert
-              </h3>
-              <p className="text-gray-200 mb-4 md:mb-6 font-open-sans text-sm md:text-base">
-                Erleben Sie anhand realer n8n Workflow-Beispiele, wie ein Handwerksbetrieb durch unsere Lösungen 
-                12 Stunden pro Woche einsparen konnte.
-              </p>
-              <div className="grid grid-cols-2 gap-3 md:gap-4 text-sm">
-                <div className="bg-orange-700/20 rounded-lg p-3 text-center">
-                  <div className="font-bold text-orange-400">Calendly Integration</div>
-                  <div className="text-xs text-gray-300 mt-1">Automatische Terminbuchung</div>
-                </div>
-                <div className="bg-orange-700/20 rounded-lg p-3 text-center">
-                  <div className="font-bold text-orange-400">E-Mail Workflows</div>
-                  <div className="text-xs text-gray-300 mt-1">Intelligente Kommunikation</div>
-                </div>
+          <div className="text-center">
+            <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 font-montserrat">
+              Sehen Sie, wie Automatisierung Ihr Unternehmen transformiert
+            </h3>
+            <p className="text-gray-200 mb-4 md:mb-6 font-open-sans text-sm md:text-base">
+              Erleben Sie anhand realer n8n Workflow-Beispiele, wie ein Handwerksbetrieb durch unsere Lösungen 
+              12 Stunden pro Woche einsparen konnte.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 text-sm max-w-2xl mx-auto">
+              <div className="bg-orange-700/20 rounded-lg p-3 text-center">
+                <div className="font-bold text-orange-400">Calendly Integration</div>
+                <div className="text-xs text-gray-300 mt-1">Automatische Terminbuchung</div>
               </div>
-            </div>
-            <div>
-              <img 
-                src="/lovable-uploads/77984400-f083-44ea-8ff7-bd541486e149.png" 
-                alt="n8n Workflow Automatisierung für Handwerk und Immobilien - YAMI Agent System"
-                className="w-full h-48 md:h-56 lg:h-64 object-cover rounded-lg shadow-lg"
-              />
+              <div className="bg-orange-700/20 rounded-lg p-3 text-center">
+                <div className="font-bold text-orange-400">E-Mail Workflows</div>
+                <div className="text-xs text-gray-300 mt-1">Intelligente Kommunikation</div>
+              </div>
+              <div className="bg-orange-700/20 rounded-lg p-3 text-center">
+                <div className="font-bold text-orange-400">CRM Synchronisation</div>
+                <div className="text-xs text-gray-300 mt-1">Automatische Datenpflege</div>
+              </div>
+              <div className="bg-orange-700/20 rounded-lg p-3 text-center">
+                <div className="font-bold text-orange-400">Rechnungsstellung</div>
+                <div className="text-xs text-gray-300 mt-1">Vollautomatische Abwicklung</div>
+              </div>
             </div>
           </div>
         </div>

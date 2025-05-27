@@ -1,195 +1,210 @@
 
-import React from 'react';
-import { Card } from "@/components/ui/card";
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Check } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Check, Star } from 'lucide-react';
+import CalendlyBooking from './CalendlyBooking';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const PricingSection = () => {
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
+  const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation();
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation();
+
+  const openCalendly = () => {
+    setIsCalendlyOpen(true);
+  };
+
+  const closeCalendly = () => {
+    setIsCalendlyOpen(false);
+  };
+
   const plans = [
     {
       name: "Starter",
-      description: "Perfekt für Einzelunternehmer und kleine Handwerksbetriebe",
-      price: "299",
-      period: "monatlich",
-      setupFee: "999",
+      price: "299€",
+      description: "Perfekt für Einzelunternehmer",
       features: [
-        "Analyse Ihrer wichtigsten 3 Prozesse",
-        "Automatisierung von 2 Kernbereichen",
-        "Basic E-Mail Support",
-        "Monatliches Check-up",
-        "DSGVO-konforme Umsetzung",
-        "Hosting inklusive"
+        "Bis zu 5 Automatisierungsworkflows",
+        "E-Mail & WhatsApp Integration",
+        "Grundlegende Terminbuchung",
+        "30 Tage Support",
+        "Einmalige Einrichtung"
       ],
       highlighted: false,
-      cta: "Starter-Paket wählen"
+      setupTime: "2-3 Wochen"
     },
     {
       name: "Professional",
-      description: "Ideal für etablierte Handwerks- und Immobilienbetriebe",
-      price: "499",
-      period: "monatlich",
-      setupFee: "1.499",
+      price: "599€",
+      description: "Ideal für kleine Handwerksbetriebe",
       features: [
-        "Vollständige Prozessanalyse",
-        "Automatisierung aller 5 Kernbereiche",
-        "Priority Support (Telefon & E-Mail)",
-        "Wöchentliche Optimierung",
-        "CRM-Integration inklusive",
-        "Individuelle Anpassungen",
-        "Mitarbeiter-Schulungen",
-        "Hosting & Backup inklusive"
+        "Bis zu 15 Automatisierungsworkflows",
+        "CRM Integration (HubSpot, Pipedrive)",
+        "Erweiterte Terminbuchung mit Kalendly",
+        "Rechnungsautomatisierung",
+        "60 Tage Support + Optimierung",
+        "Mitarbeiter-Onboarding"
       ],
       highlighted: true,
-      cta: "Professional wählen"
+      setupTime: "3-4 Wochen"
     },
     {
       name: "Business",
-      description: "Für wachsende Unternehmen mit erweiterten Anforderungen",
-      price: "999",
-      period: "monatlich",
-      setupFee: "2.499",
+      price: "999€",
+      description: "Für wachsende Unternehmen",
       features: [
-        "Umfassende Unternehmensanalyse",
-        "Vollautomatisierung aller Geschäftsprozesse",
-        "Dedicated Account Manager",
-        "24/7 Priority Support",
-        "Erweiterte API-Integrationen",
-        "Multi-Standort-Integration",
-        "Erweiterte Reporting-Tools",
-        "Quartalsweise Strategieberatung",
-        "Premium Hosting & Backup"
+        "Unbegrenzte Automatisierungsworkflows",
+        "Vollständige Geschäftsprozess-Integration",
+        "API-Anbindungen nach Wunsch",
+        "Kundenportal & Dashboard",
+        "90 Tage Support + monatliche Reviews",
+        "Team-Schulungen"
       ],
       highlighted: false,
-      cta: "Business wählen"
+      setupTime: "4-6 Wochen"
     },
     {
       name: "Enterprise",
-      description: "Für größere Betriebe mit komplexen Anforderungen",
       price: "Individuell",
-      period: "",
-      setupFee: "Auf Anfrage",
+      description: "Maßgeschneiderte Lösungen",
       features: [
-        "Komplette Unternehmensdigitalisierung",
-        "Maßgeschneiderte Softwareentwicklung",
-        "Dedicated Development Team",
-        "24/7 Premium Support & SLA",
-        "On-Premise oder Cloud-Deployment",
-        "Umfassende Mitarbeiterschulungen",
-        "Integration in bestehende ERP-Systeme",
-        "Disaster Recovery & Compliance",
-        "Monatliche Executive Reviews"
+        "Vollständig individualisierte Lösung",
+        "Dedizierter Projektmanager",
+        "Unbegrenzte Integrationen",
+        "24/7 Priority Support",
+        "Continuous Improvement Program",
+        "White-Label Optionen"
       ],
       highlighted: false,
-      cta: "Beratung vereinbaren"
+      setupTime: "6-8 Wochen"
     }
   ];
 
   return (
-    <section id="pricing" className="py-20 bg-gray-50 min-h-screen flex items-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 font-montserrat">
-            Transparente <span className="text-orange-500">Preisgestaltung</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-open-sans">
-            Wählen Sie das Paket, das perfekt zu Ihrem Unternehmen passt. 
-            Alle Preise verstehen sich zzgl. MwSt. und ohne versteckte Kosten.
-          </p>
-        </div>
+    <>
+      <section id="pricing" className="py-12 md:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div 
+            ref={titleRef}
+            className={`text-center mb-8 md:mb-12 lg:mb-16 scroll-animate ${titleVisible ? 'animate' : ''}`}
+          >
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 font-montserrat">
+              Transparente <span className="text-orange-800">Preise</span> für Ihre Automatisierung
+            </h2>
+            <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto font-open-sans">
+              Wählen Sie das Paket, das perfekt zu Ihrem Unternehmen passt. 
+              Alle Preise sind einmalig – keine versteckten Kosten, keine monatlichen Gebühren.
+            </p>
+          </div>
 
-        <div className="grid lg:grid-cols-4 gap-6">
-          {plans.map((plan, index) => (
-            <Card 
-              key={index} 
-              className={`p-6 relative ${
-                plan.highlighted 
-                  ? 'border-2 border-orange-500 shadow-xl scale-105' 
-                  : 'border border-gray-200'
-              }`}
-            >
-              {plan.highlighted && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium font-montserrat">
-                    Beliebteste Wahl
-                  </div>
-                </div>
-              )}
-
-              <div className="text-center mb-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2 font-montserrat">
-                  {plan.name}
-                </h3>
-                <p className="text-gray-600 mb-4 text-sm font-open-sans">
-                  {plan.description}
-                </p>
-                
-                <div className="mb-4">
-                  {plan.price === "Individuell" ? (
-                    <div className="text-2xl font-bold text-blue-900 font-montserrat">
-                      Individuell
+          <div 
+            ref={cardsRef}
+            className={`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8 mb-8 md:mb-12 scroll-animate ${cardsVisible ? 'animate' : ''}`}
+          >
+            {plans.map((plan, index) => (
+              <Card 
+                key={plan.name} 
+                className={`relative ${plan.highlighted ? 'ring-2 ring-orange-800 shadow-xl scale-105' : 'hover:shadow-lg'} transition-all duration-300 h-full flex flex-col`}
+              >
+                {plan.highlighted && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-orange-800 text-white px-4 py-1 rounded-full text-sm font-semibold flex items-center">
+                      <Star className="h-4 w-4 mr-1 fill-current" />
+                      Beliebteste Wahl
                     </div>
-                  ) : (
-                    <>
-                      <div className="text-3xl font-bold text-blue-900 font-montserrat">
-                        €{plan.price}
-                        <span className="text-base font-normal text-gray-600 font-open-sans">
-                          /{plan.period}
-                        </span>
-                      </div>
-                      <div className="text-sm text-gray-500 mt-1 font-open-sans">
-                        Einrichtung: €{plan.setupFee}
-                      </div>
-                    </>
-                  )}
-                </div>
-              </div>
-
-              <div className="space-y-3 mb-6">
-                {plan.features.map((feature, i) => (
-                  <div key={i} className="flex items-start">
-                    <Check className="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700 text-sm font-open-sans">{feature}</span>
                   </div>
-                ))}
-              </div>
+                )}
+                
+                <CardHeader className="text-center pb-4">
+                  <CardTitle className="text-xl lg:text-2xl font-bold text-gray-900 font-montserrat">
+                    {plan.name}
+                  </CardTitle>
+                  <CardDescription className="text-gray-600 font-open-sans">
+                    {plan.description}
+                  </CardDescription>
+                  <div className="mt-4">
+                    <span className="text-3xl lg:text-4xl font-bold text-orange-800 font-montserrat">
+                      {plan.price}
+                    </span>
+                    {plan.price !== "Individuell" && (
+                      <span className="text-gray-500 text-sm ml-2">einmalig</span>
+                    )}
+                  </div>
+                </CardHeader>
 
+                <CardContent className="flex-1 flex flex-col">
+                  <div className="space-y-3 mb-6 flex-1">
+                    {plan.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-start">
+                        <Check className="h-5 w-5 text-orange-800 mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700 font-open-sans text-sm lg:text-base">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-auto space-y-4">
+                    <div className="text-center">
+                      <div className="text-sm text-gray-500 font-open-sans">Umsetzungsdauer:</div>
+                      <div className="text-orange-800 font-semibold">{plan.setupTime}</div>
+                    </div>
+                    
+                    <Button 
+                      className={`w-full font-montserrat ${
+                        plan.highlighted 
+                          ? 'bg-orange-800 hover:bg-orange-900 text-white' 
+                          : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
+                      }`}
+                      onClick={openCalendly}
+                    >
+                      Jetzt starten
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Separate gray CTA section */}
+      <section className="py-8 md:py-12 gradient-bg-light">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div 
+            ref={ctaRef}
+            className={`text-center scroll-animate ${ctaVisible ? 'animate' : ''}`}
+          >
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 font-montserrat">
+              Nicht sicher welches Paket das richtige ist?
+            </h3>
+            <p className="text-gray-600 mb-6 font-open-sans">
+              Lassen Sie uns in einem kostenlosen Beratungsgespräch Ihre Anforderungen besprechen. 
+              Wir finden gemeinsam die perfekte Lösung für Ihr Unternehmen.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
-                className={`w-full font-montserrat ${
-                  plan.highlighted 
-                    ? 'bg-orange-500 hover:bg-orange-600 text-white' 
-                    : 'bg-white border border-orange-500 text-orange-500 hover:bg-orange-50'
-                }`}
+                size="lg"
+                className="bg-orange-800 hover:bg-orange-900 text-white font-montserrat"
+                onClick={openCalendly}
+              >
+                Beratung vereinbaren
+              </Button>
+              <Button 
+                variant="outline"
+                size="lg"
+                className="border-orange-800 text-orange-800 hover:bg-orange-50 font-montserrat"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                {plan.cta}
+                Fragen per E-Mail
               </Button>
-            </Card>
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <div className="bg-blue-900 text-white rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4 font-montserrat">
-              Nicht sicher, welches Paket das richtige ist?
-            </h3>
-            <p className="text-blue-100 mb-6 text-lg font-open-sans">
-              Vereinbaren Sie eine kostenlose Beratung und wir finden gemeinsam 
-              die optimale Lösung für Ihr Unternehmen.
-            </p>
-            <Button 
-              size="lg" 
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 font-montserrat"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Kostenlose Beratung vereinbaren
-            </Button>
-            <div className="mt-4 text-sm text-blue-200 font-open-sans">
-              ✓ Unverbindlich ✓ 30 Minuten ✓ Sofort umsetzbare Tipps
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <CalendlyBooking isOpen={isCalendlyOpen} onClose={closeCalendly} />
+    </>
   );
 };
 

@@ -46,7 +46,7 @@ const HeroSection = () => {
                   className="bg-orange-800 hover:bg-orange-900 text-white px-4 sm:px-6 lg:px-8 py-3 lg:py-4 text-sm sm:text-base lg:text-lg font-semibold font-montserrat w-full sm:w-auto mobile-no-overflow"
                   onClick={handleBookingClick}
                 >
-                  Kostenlose Prozessanalyse vereinbaren
+                  Beratung vereinbaren
                 </Button>
                 <Button 
                   variant="outline" 
@@ -64,8 +64,8 @@ const HeroSection = () => {
             <div className={`relative order-first lg:order-last scroll-animate-right ${heroVisible ? 'animate' : ''} mobile-no-overflow`}>
               <div className="relative rounded-2xl overflow-hidden shadow-2xl float-animation mobile-no-overflow">
                 <img 
-                  src="/lovable-uploads/8564e40f-1ee8-4e3a-8164-9139168447fd.png" 
-                  alt="n8n Automatisierung Workflows - Zukunft der Büroautomatisierung"
+                  src="/lovable-uploads/a3ae3069-fb9b-4634-999f-33a6fa48c0ba.png" 
+                  alt="Futuristische Büroautomatisierung mit KI und digitalen Workflows"
                   className="w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover mobile-no-overflow"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent"></div>

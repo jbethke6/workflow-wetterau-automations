@@ -20,7 +20,7 @@ const ChatAssistant = () => {
   const [inputMessage, setInputMessage] = useState("");
 
   const quickActions = [
-    "Kostenlose Beratung vereinbaren",
+    "Beratung vereinbaren",
     "Preise anzeigen",
     "Erfolgsgeschichten",
     "Wie funktioniert es?"
@@ -41,12 +41,12 @@ const ChatAssistant = () => {
 
     if (inputMessage.toLowerCase().includes("beratung") || 
         inputMessage.toLowerCase().includes("termin") ||
-        inputMessage === "Kostenlose Beratung vereinbaren") {
+        inputMessage === "Beratung vereinbaren") {
       
       setTimeout(() => {
         const botMessage = {
           id: messages.length + 2,
-          text: "Perfekt! Ich öffne direkt unser Buchungssystem für Sie. Dort können Sie Ihren Wunschtermin für die kostenlose Prozessanalyse auswählen.",
+          text: "Perfekt! Ich öffne direkt unser Buchungssystem für Sie. Dort können Sie Ihren Wunschtermin für die Prozessanalyse auswählen.",
           sender: "bot",
           timestamp: new Date()
         };
@@ -66,7 +66,7 @@ const ChatAssistant = () => {
       } else if (inputMessage.toLowerCase().includes("zeit") || inputMessage.toLowerCase().includes("stunden")) {
         botResponse = "Unsere Kunden sparen durchschnittlich 10 Stunden pro Woche durch unsere Automatisierungslösungen. Das entspricht über 500 Stunden im Jahr - Zeit, die Sie in Ihr Kerngeschäft investieren können!";
       } else {
-        botResponse = "Das ist eine interessante Frage! Für eine detaillierte Beratung zu Ihrem spezifischen Fall empfehle ich Ihnen ein kostenloses Erstgespräch. Soll ich direkt einen Termin für Sie vereinbaren?";
+        botResponse = "Das ist eine interessante Frage! Für eine detaillierte Beratung zu Ihrem spezifischen Fall empfehle ich Ihnen ein Erstgespräch. Soll ich direkt einen Termin für Sie vereinbaren?";
       }
 
       const botMessage = {
@@ -195,11 +195,11 @@ const ChatAssistant = () => {
               <div className="flex justify-between text-xs text-gray-600 font-open-sans">
                 <div className="flex items-center">
                   <Phone className="h-3 w-3 mr-1" />
-                  +49 176 48981671
+                  017648981671
                 </div>
                 <div className="flex items-center">
                   <Clock className="h-3 w-3 mr-1" />
-                  Mo-Fr 9-17 Uhr
+                  So: 7-20h, Mo-Sa: 18-23h
                 </div>
               </div>
             </div>
