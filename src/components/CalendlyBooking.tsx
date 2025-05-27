@@ -12,7 +12,6 @@ interface CalendlyBookingProps {
 const CalendlyBooking = ({ isOpen, onClose }: CalendlyBookingProps) => {
   useEffect(() => {
     if (isOpen && !window.Calendly) {
-      // Load Calendly script
       const script = document.createElement('script');
       script.src = 'https://assets.calendly.com/assets/external/widget.js';
       script.async = true;
@@ -22,7 +21,6 @@ const CalendlyBooking = ({ isOpen, onClose }: CalendlyBookingProps) => {
 
   useEffect(() => {
     if (isOpen && window.Calendly) {
-      // Initialize Calendly widget with your correct URL
       window.Calendly.initInlineWidget({
         url: 'https://calendly.com/bethke-ftr',
         parentElement: document.getElementById('calendly-inline-widget'),
@@ -38,21 +36,21 @@ const CalendlyBooking = ({ isOpen, onClose }: CalendlyBookingProps) => {
     <div className="fixed inset-0 z-[60] bg-black/50 flex items-center justify-center p-4">
       <Card className="bg-white shadow-2xl border-0 rounded-2xl overflow-hidden w-full max-w-4xl max-h-[90vh]">
         {/* Header */}
-        <div className="bg-blue-900 text-white p-4 flex items-center justify-between">
+        <div className="gradient-bg-dark text-white p-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+            <div className="w-8 h-8 bg-orange-700 rounded-full flex items-center justify-center">
               <Calendar className="h-4 w-4" />
             </div>
             <div>
               <h4 className="font-montserrat font-semibold">Kostenlose Prozessanalyse buchen</h4>
-              <p className="text-sm text-blue-200">Wählen Sie Ihren Wunschtermin</p>
+              <p className="text-sm text-gray-200">Wählen Sie Ihren Wunschtermin</p>
             </div>
           </div>
           <Button
             variant="ghost"
             size="sm"
             onClick={onClose}
-            className="text-white hover:bg-blue-800"
+            className="text-white hover:bg-gray-700"
           >
             <X className="h-4 w-4" />
           </Button>
@@ -71,7 +69,6 @@ const CalendlyBooking = ({ isOpen, onClose }: CalendlyBookingProps) => {
   );
 };
 
-// Extend the global window object to include Calendly
 declare global {
   interface Window {
     Calendly: any;

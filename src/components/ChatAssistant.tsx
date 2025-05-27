@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { MessageCircle, X, Send, Phone, Mail, Clock, Calendar } from 'lucide-react';
+import { MessageCircle, X, Send, Phone, Clock, Calendar } from 'lucide-react';
 import CalendlyBooking from './CalendlyBooking';
 
 const ChatAssistant = () => {
@@ -39,7 +39,6 @@ const ChatAssistant = () => {
     setMessages([...messages, userMessage]);
     setInputMessage("");
 
-    // Check if user wants to book consultation
     if (inputMessage.toLowerCase().includes("beratung") || 
         inputMessage.toLowerCase().includes("termin") ||
         inputMessage === "Kostenlose Beratung vereinbaren") {
@@ -53,7 +52,6 @@ const ChatAssistant = () => {
         };
         setMessages(prev => [...prev, botMessage]);
         
-        // Open Calendly after a short delay
         setTimeout(() => {
           setIsCalendlyOpen(true);
         }, 1000);
@@ -61,7 +59,6 @@ const ChatAssistant = () => {
       return;
     }
 
-    // Simulate bot response for other messages
     setTimeout(() => {
       let botResponse = "";
       if (inputMessage.toLowerCase().includes("preis") || inputMessage.toLowerCase().includes("kosten")) {
@@ -103,40 +100,40 @@ const ChatAssistant = () => {
   return (
     <>
       {/* Floating Action Buttons */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col space-y-4">
+      <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex flex-col space-y-3 md:space-y-4">
         {/* Calendly Booking Button */}
         <Button
           onClick={openCalendly}
-          className="bg-orange-500 hover:bg-orange-600 text-white rounded-full w-16 h-16 shadow-lg hover:shadow-xl transition-all duration-300"
+          className="bg-orange-700 hover:bg-orange-800 text-white rounded-full w-12 h-12 md:w-16 md:h-16 shadow-lg hover:shadow-xl transition-all duration-300"
           size="lg"
         >
-          <Calendar className="h-6 w-6" />
+          <Calendar className="h-5 w-5 md:h-6 md:w-6" />
         </Button>
 
         {/* Chat Trigger Button */}
         <Button
           onClick={toggleChat}
-          className="bg-orange-500 hover:bg-orange-600 text-white rounded-full w-16 h-16 shadow-lg hover:shadow-xl transition-all duration-300"
+          className="bg-orange-700 hover:bg-orange-800 text-white rounded-full w-12 h-12 md:w-16 md:h-16 shadow-lg hover:shadow-xl transition-all duration-300"
           size="lg"
         >
-          {isOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
+          {isOpen ? <X className="h-5 w-5 md:h-6 md:w-6" /> : <MessageCircle className="h-5 w-5 md:h-6 md:w-6" />}
         </Button>
       </div>
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-28 right-6 z-50 w-96 max-w-[90vw]">
+        <div className="fixed bottom-20 md:bottom-28 right-4 md:right-6 z-50 w-80 md:w-96 max-w-[90vw]">
           <Card className="bg-white shadow-2xl border-0 rounded-2xl overflow-hidden">
             {/* Chat Header */}
-            <div className="bg-blue-900 text-white p-4">
+            <div className="gradient-bg-dark text-white p-3 md:p-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
-                    <MessageCircle className="h-4 w-4" />
+                  <div className="w-6 h-6 md:w-8 md:h-8 bg-orange-700 rounded-full flex items-center justify-center">
+                    <MessageCircle className="h-3 w-3 md:h-4 md:w-4" />
                   </div>
                   <div>
-                    <h4 className="font-montserrat font-semibold">AutoFlow Assistent</h4>
-                    <div className="flex items-center text-xs text-blue-200">
+                    <h4 className="font-montserrat font-semibold text-sm md:text-base">AutoFlow Assistent</h4>
+                    <div className="flex items-center text-xs text-gray-200">
                       <div className="w-2 h-2 bg-green-400 rounded-full mr-1"></div>
                       Online
                     </div>
@@ -146,7 +143,7 @@ const ChatAssistant = () => {
                   variant="ghost"
                   size="sm"
                   onClick={toggleChat}
-                  className="text-white hover:bg-blue-800"
+                  className="text-white hover:bg-gray-700"
                 >
                   <X className="h-4 w-4" />
                 </Button>
@@ -154,20 +151,20 @@ const ChatAssistant = () => {
             </div>
 
             {/* Messages Area */}
-            <div className="h-80 overflow-y-auto p-4 space-y-4">
+            <div className="h-64 md:h-80 overflow-y-auto p-3 md:p-4 space-y-3 md:space-y-4">
               {messages.map((message) => (
                 <div
                   key={message.id}
                   className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-[80%] rounded-lg p-3 ${
+                    className={`max-w-[80%] rounded-lg p-2 md:p-3 ${
                       message.sender === 'user'
-                        ? 'bg-orange-500 text-white'
+                        ? 'bg-orange-700 text-white'
                         : 'bg-gray-100 text-gray-800'
                     }`}
                   >
-                    <p className="text-sm font-open-sans">{message.text}</p>
+                    <p className="text-xs md:text-sm font-open-sans">{message.text}</p>
                   </div>
                 </div>
               ))}
@@ -183,7 +180,7 @@ const ChatAssistant = () => {
                         variant="outline"
                         size="sm"
                         onClick={() => handleQuickAction(action)}
-                        className="text-xs h-8 font-open-sans"
+                        className="text-xs h-7 md:h-8 font-open-sans border-orange-700 text-orange-700 hover:bg-orange-50"
                       >
                         {action}
                       </Button>
@@ -194,11 +191,11 @@ const ChatAssistant = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="bg-gray-50 p-3 border-t">
+            <div className="bg-gray-50 p-2 md:p-3 border-t">
               <div className="flex justify-between text-xs text-gray-600 font-open-sans">
                 <div className="flex items-center">
                   <Phone className="h-3 w-3 mr-1" />
-                  +49 6032 123 456
+                  +49 176 48981671
                 </div>
                 <div className="flex items-center">
                   <Clock className="h-3 w-3 mr-1" />
@@ -208,19 +205,19 @@ const ChatAssistant = () => {
             </div>
 
             {/* Input Area */}
-            <div className="p-4 border-t">
+            <div className="p-3 md:p-4 border-t">
               <div className="flex space-x-2">
                 <Input
                   value={inputMessage}
                   onChange={(e) => setInputMessage(e.target.value)}
                   placeholder="Ihre Nachricht..."
                   onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                  className="flex-1 font-open-sans"
+                  className="flex-1 font-open-sans text-sm"
                 />
                 <Button
                   onClick={handleSendMessage}
                   size="sm"
-                  className="bg-orange-500 hover:bg-orange-600"
+                  className="bg-orange-700 hover:bg-orange-800"
                 >
                   <Send className="h-4 w-4" />
                 </Button>
