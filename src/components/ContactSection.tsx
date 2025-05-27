@@ -233,11 +233,11 @@ const ContactSection = () => {
                   <div>
                     <div className="font-medium text-gray-900">Telefon:</div>
                     <div className="text-gray-700">+49 (0) 176 / 48981671</div>
-                    <div className="text-xs md:text-sm text-gray-500">Mo-Fr 9:00 - 17:00 Uhr</div>
+                    <div className="text-xs md:text-sm text-gray-500">Mo-Fr 18:00 - 23:00 Uhr</div>
                   </div>
                   <div>
                     <div className="font-medium text-gray-900">E-Mail:</div>
-                    <div className="text-gray-700">info@autoflow-pro.de</div>
+                    <div className="text-gray-700">info@yami-ai.com</div>
                   </div>
                   <div>
                     <div className="font-medium text-gray-900">Büro:</div>
