@@ -121,7 +121,7 @@ const CaseStudiesSection = () => {
 
         <div className="mt-12 lg:mt-16 text-center">
           <img 
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop&crop=center" 
+            src="/images/logo auto.png" 
             alt="Erfolgreiches Team bei der Arbeit"
             className="w-full h-48 lg:h-64 object-cover rounded-2xl shadow-lg mb-8"
           />
