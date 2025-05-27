@@ -189,7 +189,7 @@ const ContactSection = () => {
                     variant="outline"
                     className="w-full border-orange-700 text-orange-700 hover:bg-orange-50"
                   >
-                    Kostenlose Analyse anfordern
+                    Analyse anfordern
                   </Button>
                 </div>
 
@@ -261,18 +261,38 @@ const ContactSection = () => {
                 </p>
               </Card>
 
-              {/* n8n Workflow Preview */}
+              {/* Technical Workflow Previews */}
               <Card className="p-4 md:p-6 bg-gray-900 text-white shadow-lg">
                 <h4 className="text-base md:text-lg font-bold mb-3">
-                  🔧 Live Workflow Beispiel
+                  🔧 Live Workflow Beispiele
                 </h4>
-                <img 
-                  src="/lovable-uploads/386cff32-acdb-40b5-aa40-6416bb2aa575.png" 
-                  alt="n8n Workflow Beispiel - Datei-Automatisierung mit Google Drive und Supabase"
-                  className="w-full h-32 md:h-40 object-cover rounded-lg mb-3"
-                />
-                <p className="text-gray-300 text-xs md:text-sm">
-                  So könnte Ihr automatisierter Workflow aussehen - von der Datei-Erstellung bis zur intelligenten Verarbeitung.
+                
+                <div className="space-y-4">
+                  <div>
+                    <img 
+                      src="/lovable-uploads/e61e520c-4f9d-44be-930d-97394a0103d3.png" 
+                      alt="Code-Automatisierung Workflow"
+                      className="w-full h-24 object-cover rounded-lg mb-2"
+                    />
+                    <p className="text-gray-300 text-xs">
+                      Automatisierte Code-Verarbeitung und Datenanalyse
+                    </p>
+                  </div>
+
+                  <div>
+                    <img 
+                      src="/lovable-uploads/928e0ad3-4743-4d59-a202-36e4948d1d91.png" 
+                      alt="Team-Collaboration Workflow"
+                      className="w-full h-24 object-cover rounded-lg mb-2"
+                    />
+                    <p className="text-gray-300 text-xs">
+                      Workflow für automatisierte Team-Koordination
+                    </p>
+                  </div>
+                </div>
+                
+                <p className="text-gray-300 text-xs mt-4">
+                  So könnte Ihr automatisierter Workflow aussehen - von der Datenerfassung bis zur intelligenten Verarbeitung.
                 </p>
               </Card>
             </div>

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, Star } from 'lucide-react';
+import { Check, Star, Plus } from 'lucide-react';
 import CalendlyBooking from './CalendlyBooking';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
@@ -11,6 +11,7 @@ const PricingSection = () => {
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
   const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation();
   const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation();
+  const { ref: upsellRef, isVisible: upsellVisible } = useScrollAnimation();
 
   const openCalendly = () => {
     setIsCalendlyOpen(true);
@@ -23,26 +24,28 @@ const PricingSection = () => {
   const plans = [
     {
       name: "Starter",
-      price: "299€",
+      setupPrice: "299€",
+      monthlyPrice: "49€",
       description: "Perfekt für Einzelunternehmer",
       features: [
         "Bis zu 5 Automatisierungsworkflows",
         "E-Mail & WhatsApp Integration",
         "Grundlegende Terminbuchung",
         "30 Tage Support",
-        "Einmalige Einrichtung"
+        "Monatliche Wartung inklusive"
       ],
       highlighted: false,
       setupTime: "2-3 Wochen"
     },
     {
       name: "Professional",
-      price: "599€",
+      setupPrice: "599€",
+      monthlyPrice: "99€",
       description: "Ideal für kleine Handwerksbetriebe",
       features: [
         "Bis zu 15 Automatisierungsworkflows",
         "CRM Integration (HubSpot, Pipedrive)",
-        "Erweiterte Terminbuchung mit Kalendly",
+        "Erweiterte Terminbuchung mit Calendly",
         "Rechnungsautomatisierung",
         "60 Tage Support + Optimierung",
         "Mitarbeiter-Onboarding"
@@ -52,7 +55,8 @@ const PricingSection = () => {
     },
     {
       name: "Business",
-      price: "999€",
+      setupPrice: "999€",
+      monthlyPrice: "199€",
       description: "Für wachsende Unternehmen",
       features: [
         "Unbegrenzte Automatisierungsworkflows",
@@ -67,7 +71,8 @@ const PricingSection = () => {
     },
     {
       name: "Enterprise",
-      price: "Individuell",
+      setupPrice: "Individuell",
+      monthlyPrice: "Individuell",
       description: "Maßgeschneiderte Lösungen",
       features: [
         "Vollständig individualisierte Lösung",
@@ -79,6 +84,45 @@ const PricingSection = () => {
       ],
       highlighted: false,
       setupTime: "6-8 Wochen"
+    }
+  ];
+
+  const upsellServices = [
+    {
+      name: "Automatisierungs-Intensiv-Seminar",
+      price: "800€",
+      duration: "4 Stunden",
+      description: "Lernen Sie, wie Sie Ihr Unternehmen systematisch automatisieren",
+      features: [
+        "Live Workshop mit Ihrem Team",
+        "Prozessanalyse vor Ort",
+        "Individuelle Automatisierungsroadmap",
+        "30 Tage Follow-up Support"
+      ]
+    },
+    {
+      name: "Express-Automatisierung",
+      price: "1.200€",
+      duration: "1 Woche",
+      description: "Schnelle Umsetzung einer kritischen Automatisierung",
+      features: [
+        "Priority Development",
+        "Binnen 7 Tagen implementiert",
+        "Dedizierter Entwickler",
+        "Sofortige Schulung"
+      ]
+    },
+    {
+      name: "Monatliche Optimierung",
+      price: "300€",
+      duration: "monatlich",
+      description: "Kontinuierliche Verbesserung Ihrer Workflows",
+      features: [
+        "Monatliche Analyse",
+        "Neue Automatisierungsideen",
+        "Performance Optimierung",
+        "Trend-Updates"
+      ]
     }
   ];
 
@@ -94,8 +138,8 @@ const PricingSection = () => {
               Transparente <span className="text-orange-800">Preise</span> für Ihre Automatisierung
             </h2>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto font-open-sans">
-              Wählen Sie das Paket, das perfekt zu Ihrem Unternehmen passt. 
-              Alle Preise sind einmalig – keine versteckten Kosten, keine monatlichen Gebühren.
+              Einmalige Setup-Kosten plus monatliche Betreuung für nachhaltigen Erfolg. 
+              Keine versteckten Kosten, volle Transparenz.
             </p>
           </div>
 
@@ -124,13 +168,23 @@ const PricingSection = () => {
                   <CardDescription className="text-gray-600 font-open-sans">
                     {plan.description}
                   </CardDescription>
-                  <div className="mt-4">
-                    <span className="text-3xl lg:text-4xl font-bold text-orange-800 font-montserrat">
-                      {plan.price}
-                    </span>
-                    {plan.price !== "Individuell" && (
-                      <span className="text-gray-500 text-sm ml-2">einmalig</span>
-                    )}
+                  <div className="mt-4 space-y-2">
+                    <div>
+                      <span className="text-2xl lg:text-3xl font-bold text-orange-800 font-montserrat">
+                        {plan.setupPrice}
+                      </span>
+                      {plan.setupPrice !== "Individuell" && (
+                        <span className="text-gray-500 text-sm ml-2">Setup</span>
+                      )}
+                    </div>
+                    <div>
+                      <span className="text-xl lg:text-2xl font-bold text-gray-700 font-montserrat">
+                        {plan.monthlyPrice}
+                      </span>
+                      {plan.monthlyPrice !== "Individuell" && (
+                        <span className="text-gray-500 text-sm ml-2">/Monat</span>
+                      )}
+                    </div>
                   </div>
                 </CardHeader>
 
@@ -168,8 +222,68 @@ const PricingSection = () => {
         </div>
       </section>
 
+      {/* Upsell Services Section */}
+      <section className="py-8 md:py-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div 
+            ref={upsellRef}
+            className={`text-center mb-8 md:mb-12 scroll-animate ${upsellVisible ? 'animate' : ''}`}
+          >
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 font-montserrat">
+              Zusätzliche <span className="text-orange-800">Services</span>
+            </h3>
+            <p className="text-gray-600 max-w-2xl mx-auto font-open-sans">
+              Erweitern Sie Ihr Automatisierungs-Know-how mit unseren Premium-Services
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {upsellServices.map((service, index) => (
+              <Card key={service.name} className="hover:shadow-lg transition-all duration-300 h-full flex flex-col">
+                <CardHeader className="text-center">
+                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Plus className="h-6 w-6 text-orange-800" />
+                  </div>
+                  <CardTitle className="text-lg font-bold text-gray-900 font-montserrat">
+                    {service.name}
+                  </CardTitle>
+                  <CardDescription className="text-gray-600 font-open-sans">
+                    {service.description}
+                  </CardDescription>
+                  <div className="mt-4">
+                    <span className="text-2xl font-bold text-orange-800 font-montserrat">
+                      {service.price}
+                    </span>
+                    <div className="text-sm text-gray-500">{service.duration}</div>
+                  </div>
+                </CardHeader>
+
+                <CardContent className="flex-1 flex flex-col">
+                  <div className="space-y-2 mb-6 flex-1">
+                    {service.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-start">
+                        <Check className="h-4 w-4 text-orange-800 mr-2 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700 font-open-sans text-sm">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Button 
+                    variant="outline"
+                    className="w-full border-orange-800 text-orange-800 hover:bg-orange-50 font-montserrat"
+                    onClick={openCalendly}
+                  >
+                    Mehr erfahren
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Separate gray CTA section */}
-      <section className="py-8 md:py-12 gradient-bg-light">
+      <section className="py-8 md:py-12 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={ctaRef}
