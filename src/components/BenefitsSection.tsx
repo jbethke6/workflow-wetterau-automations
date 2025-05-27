@@ -57,7 +57,7 @@ const BenefitsSection = () => {
 
         <div className="mt-12 lg:mt-16">
           <img 
-            src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=1200&h=400&fit=crop&crop=center" 
+            src="/images/stuff.png" 
             alt="Futuristische Automatisierungstechnologie - KI-gesteuerte Workflows für modernes Business"
             className="w-full h-48 lg:h-64 object-cover rounded-2xl shadow-lg"
           />
