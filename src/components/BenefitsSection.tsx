@@ -6,21 +6,21 @@ const BenefitsSection = () => {
   const benefits = [
     {
       icon: Clock,
-      title: 'Zeitersparnis',
-      description: 'Durchschnittlich 10 Stunden pro Woche mehr für Ihr Kerngeschäft',
-      highlight: '10h/Woche'
+      title: 'Automatisierung',
+      description: 'Automatisierte Workflows für repetitive Aufgaben',
+      highlight: 'Mehr Zeit'
     },
     {
       icon: FileText,
-      title: 'Kostenreduktion',
-      description: 'Senken Sie Ihre Verwaltungskosten um bis zu 60%',
-      highlight: '60% weniger Kosten'
+      title: 'Integration',
+      description: 'Nahtlose Integration mit Ihren bestehenden Tools',
+      highlight: 'Einfache Anbindung'
     },
     {
       icon: Check,
-      title: 'Fehlerminimierung',
-      description: 'Reduzieren Sie Fehler durch automatisierte Prozesse um 90%',
-      highlight: '90% weniger Fehler'
+      title: 'Skalierbarkeit',
+      description: 'Workflows, die mit Ihrem Unternehmen wachsen',
+      highlight: 'Flexibel'
     }
   ];
 
@@ -32,7 +32,7 @@ const BenefitsSection = () => {
             Ihre Vorteile auf einen Blick
           </h2>
           <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto font-open-sans px-4">
-            Automatisierung für Online-Shops ist keine Zukunftsmusik – sie funktioniert heute und bringt sofortige Ergebnisse
+            Technische Möglichkeiten für E-Commerce mit n8n und KI
           </p>
         </div>
 
@@ -53,14 +53,6 @@ const BenefitsSection = () => {
               </p>
             </div>
           ))}
-        </div>
-
-        <div className="mt-12 lg:mt-16">
-          <img 
-            src="/images/stuff.png" 
-            alt="Futuristische Automatisierungstechnologie - KI-gesteuerte Workflows für modernes Business"
-            className="w-full h-48 lg:h-64 object-cover rounded-2xl shadow-lg"
-          />
         </div>
       </div>
     </section>

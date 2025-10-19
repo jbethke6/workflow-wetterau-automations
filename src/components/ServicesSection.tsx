@@ -1,14 +1,17 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Card } from "@/components/ui/card";
 import { FileText, Calendar, MessageSquare, Users, Search } from 'lucide-react';
+import ServiceModal from './ServiceModal';
 
 const ServicesSection = () => {
+  const [selectedService, setSelectedService] = useState<number | null>(null);
+  
   const services = [
     {
       icon: MessageSquare,
-      title: "Der \"Warenkorb-Retter\"",
-      description: "Automatisierung der Warenkorb-Wiederherstellung - Automatische E-Mail- und SMS-Sequenzen für abgebrochene Warenkörbe mit intelligenten Anreizen. Wiederherstellung von 10-20% verlorener Verkäufe.",
+      title: "Warenkorb-Retter",
+      description: "Automatische E-Mail-Sequenzen für abgebrochene Warenkörbe mit intelligenten Anreizen.",
       benefits: [
         "Automatische Erinnerungen nach 1h, 24h, 72h",
         "Personalisierte Rabattcodes und Anreize",
@@ -19,8 +22,8 @@ const ServicesSection = () => {
     },
     {
       icon: FileText,
-      title: "Der \"Bestands-Bot\"",
-      description: "Multi-Channel Bestands-Synchronisierung - Echtzeit-Synchronisierung deiner Lagerbestände über alle Verkaufskanäle (Shopify, Amazon, eBay, etc.). Keine Überverkäufe, 100% genaue Daten.",
+      title: "Bestands-Bot",
+      description: "Echtzeit-Synchronisierung deiner Lagerbestände über alle Verkaufskanäle.",
       benefits: [
         "Echtzeit-Updates über alle Kanäle",
         "Automatische Fehlerbehandlung",
@@ -31,8 +34,8 @@ const ServicesSection = () => {
     },
     {
       icon: MessageSquare,
-      title: "Der \"Smarte Chatbot-Berater\"",
-      description: "KI-gestützter Kundenberatungs-Chatbot - 24/7 KI-Chatbot für Kundensupport, Produktberatung und intelligente Empfehlungen. Reduzierung von Support-Tickets um 70%.",
+      title: "Smarter Chatbot-Berater",
+      description: "24/7 KI-Chatbot für Kundensupport, Produktberatung und intelligente Empfehlungen.",
       benefits: [
         "24/7 Verfügbarkeit",
         "Intelligente Produktempfehlungen",
@@ -43,8 +46,8 @@ const ServicesSection = () => {
     },
     {
       icon: FileText,
-      title: "Der \"Marketing-Content-Generator\"",
-      description: "KI-gestützte Content-Erstellung - Automatische Erstellung von Produktbeschreibungen, Social Media Posts, E-Mail-Kampagnen und Blogartikel mit KI. Zeit sparen, Qualität erhöhen.",
+      title: "Marketing-Content-Generator",
+      description: "Automatische Erstellung von Produktbeschreibungen, Social Media Posts und E-Mail-Kampagnen mit KI.",
       benefits: [
         "Automatische Produktbeschreibungen",
         "Social Media Content in Sekunden",
@@ -55,8 +58,8 @@ const ServicesSection = () => {
     },
     {
       icon: Users,
-      title: "Der \"Kunden-Loyalitäts-Booster\"",
-      description: "Automatisierte Kundenbindung - Personalisierte Follow-ups, Treueprogramme und exklusive Angebote basierend auf Kundenverhalten. Erhöhung des Customer Lifetime Value.",
+      title: "Kunden-Loyalitäts-Booster",
+      description: "Personalisierte Follow-ups, Treueprogramme und exklusive Angebote basierend auf Kundenverhalten.",
       benefits: [
         "Automatische Personalisierung",
         "Treuepunkte und Rewards",
@@ -81,7 +84,11 @@ const ServicesSection = () => {
 
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow h-full overflow-hidden">
+            <Card 
+              key={index} 
+              className="hover:shadow-lg transition-all cursor-pointer hover:scale-105 duration-300 h-full overflow-hidden"
+              onClick={() => setSelectedService(index)}
+            >
               {/* n8n Screenshot Image */}
               <div className="relative h-48 overflow-hidden">
                 <img 
@@ -104,14 +111,8 @@ const ServicesSection = () => {
                   {service.description}
                 </p>
                 
-                <div className="space-y-3">
-                  <h4 className="font-semibold text-gray-900 text-sm">Ihre Vorteile:</h4>
-                  {service.benefits.map((benefit, i) => (
-                    <div key={i} className="flex items-start">
-                      <div className="bg-orange-600 rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></div>
-                      <span className="text-sm text-gray-700">{benefit}</span>
-                    </div>
-                  ))}
+                <div className="mt-4 text-orange-600 text-sm font-semibold">
+                  Klicken für Details →
                 </div>
               </div>
             </Card>
@@ -136,6 +137,16 @@ const ServicesSection = () => {
           </div>
         </div>
       </div>
+      
+      {selectedService !== null && (
+        <ServiceModal
+          isOpen={true}
+          onClose={() => setSelectedService(null)}
+          title={services[selectedService].title}
+          description={services[selectedService].description}
+          benefits={services[selectedService].benefits}
+        />
+      )}
     </section>
   );
 };

@@ -19,8 +19,7 @@ const SolutionsSection = () => {
             <span className="text-orange-500">persönlichem Service</span>
           </h2>
           <p className="text-base md:text-lg lg:text-xl text-gray-200 max-w-4xl mx-auto font-open-sans">
-            Ich analysiere Ihre Shop-Prozesse, entwickle individuelle Automatisierungslösungen 
-            und begleite Sie bis zur erfolgreichen Umsetzung – ohne dass Sie sich um die Technik kümmern müssen.
+            Ich analysiere Ihre Shop-Prozesse und entwickle individuelle Automatisierungslösungen mit n8n
           </p>
         </div>
 
@@ -32,9 +31,9 @@ const SolutionsSection = () => {
             <div className="bg-orange-700 rounded-full w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-lg">
               <span className="text-lg md:text-xl lg:text-2xl font-bold font-montserrat text-white">1</span>
             </div>
-            <h3 className="text-base md:text-lg lg:text-xl font-bold mb-2 md:mb-3 font-montserrat">Analyse</h3>
+            <h3 className="text-base md:text-lg lg:text-xl font-bold mb-2 md:mb-3 font-montserrat">Prozessanalyse</h3>
             <p className="text-gray-200 font-open-sans text-sm md:text-base">
-              Ich identifiziere Ihre zeitraubendsten Shop-Prozesse und berechne Ihr Einsparpotential
+              Identifizierung automatisierbarer Prozesse in Ihrem Shop
             </p>
           </div>
 
@@ -42,9 +41,9 @@ const SolutionsSection = () => {
             <div className="bg-orange-700 rounded-full w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-lg">
               <span className="text-lg md:text-xl lg:text-2xl font-bold font-montserrat text-white">2</span>
             </div>
-            <h3 className="text-base md:text-lg lg:text-xl font-bold mb-2 md:mb-3 font-montserrat">Maßgeschneiderte Lösung</h3>
+            <h3 className="text-base md:text-lg lg:text-xl font-bold mb-2 md:mb-3 font-montserrat">Workflow-Entwicklung</h3>
             <p className="text-gray-200 font-open-sans text-sm md:text-base">
-              Entwicklung individueller Automatisierungsworkflows, perfekt angepasst an Ihr Unternehmen
+              Entwicklung individueller n8n Workflows für Ihr Unternehmen
             </p>
           </div>
 
@@ -52,9 +51,9 @@ const SolutionsSection = () => {
             <div className="bg-orange-700 rounded-full w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-lg">
               <span className="text-lg md:text-xl lg:text-2xl font-bold font-montserrat text-white">3</span>
             </div>
-            <h3 className="text-base md:text-lg lg:text-xl font-bold mb-2 md:mb-3 font-montserrat">Komplette Umsetzung</h3>
+            <h3 className="text-base md:text-lg lg:text-xl font-bold mb-2 md:mb-3 font-montserrat">Implementation</h3>
             <p className="text-gray-200 font-open-sans text-sm md:text-base">
-              Ich implementiere alles für Sie – Sie müssen sich um nichts kümmern
+              Integration der Workflows in Ihre bestehende Infrastruktur
             </p>
           </div>
 
@@ -62,9 +61,9 @@ const SolutionsSection = () => {
             <div className="bg-orange-700 rounded-full w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-lg">
               <span className="text-lg md:text-xl lg:text-2xl font-bold font-montserrat text-white">4</span>
             </div>
-            <h3 className="text-base md:text-lg lg:text-xl font-bold mb-2 md:mb-3 font-montserrat">Kontinuierliche Betreuung</h3>
+            <h3 className="text-base md:text-lg lg:text-xl font-bold mb-2 md:mb-3 font-montserrat">Support</h3>
             <p className="text-gray-200 font-open-sans text-sm md:text-base">
-              Support, Wartung und stetige Optimierung Ihrer Automatisierungslösungen
+              Wartung und Optimierung Ihrer Workflows
             </p>
           </div>
         </div>
@@ -75,11 +74,10 @@ const SolutionsSection = () => {
         >
           <div className="text-center">
             <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 font-montserrat">
-              Sehen Sie, wie Automatisierung Ihr Unternehmen transformiert
+              n8n Workflow Beispiele
             </h3>
             <p className="text-gray-200 mb-4 md:mb-6 font-open-sans text-sm md:text-base">
-              Erleben Sie anhand realer n8n Workflow-Beispiele, wie ein Online-Shop durch meine Lösungen 
-              15% Umsatzsteigerung und 12 Stunden pro Woche Zeitersparnis erreichen konnte.
+              Erleben Sie anhand realer n8n Workflow-Beispiele, wie Automatisierungen funktionieren
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 text-sm max-w-2xl mx-auto">
               <div className="bg-orange-700/20 rounded-lg p-3 text-center">

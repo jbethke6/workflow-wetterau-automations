@@ -11,9 +11,7 @@ const Navigation = () => {
   const navItems = [
     { label: 'Startseite', href: '#home' },
     { label: 'Lösungen', href: '#solutions' },
-    { label: 'Leistungen', href: '#services' },
-    { label: 'Preise', href: '#pricing' },
-    { label: 'Erfolgsgeschichten', href: '#case-studies' },
+    { label: 'Services', href: '#services' },
     { label: 'Kontakt', href: '#contact' }
   ];
 
@@ -34,9 +32,10 @@ const Navigation = () => {
             <div className="flex items-center space-x-3 mobile-no-overflow">
               <img 
                 src="/lovable-uploads/edf6126a-8f1c-4010-b365-60be063f3bb0.png" 
-                alt="AutoFlow Pro Logo" 
+                alt="Yami-AI Logo" 
                 className="h-8 w-8 lg:h-10 lg:w-10"
               />
+              <span className="text-xl font-bold text-gray-900 font-montserrat">Yami-AI</span>
             </div>
 
             {/* Desktop Navigation */}
