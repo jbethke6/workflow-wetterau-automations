@@ -6,64 +6,64 @@ import { FileText, Calendar, MessageSquare, Users, Search } from 'lucide-react';
 const ServicesSection = () => {
   const services = [
     {
-      icon: FileText,
-      title: "Rechnungserstellung",
-      description: "Automatische Erstellung und Versendung von Rechnungen basierend auf erledigten Aufträgen",
+      icon: MessageSquare,
+      title: "Der \"Warenkorb-Retter\"",
+      description: "Automatisierung der Warenkorb-Wiederherstellung - Automatische E-Mail- und SMS-Sequenzen für abgebrochene Warenkörbe mit intelligenten Anreizen. Wiederherstellung von 10-20% verlorener Verkäufe.",
       benefits: [
-        "Rechnungen werden automatisch nach Projektabschluss erstellt",
-        "Integration mit Ihrer bestehenden Buchhaltungssoftware",
-        "Mahnwesen und Zahlungserinnerungen automatisiert",
-        "Reduzierung der Rechnungsstellung von Tagen auf Stunden"
-      ],
-      image: "/images/vertrag.png"
-    },
-    {
-      icon: Calendar,
-      title: "Terminbuchung",
-      description: "Online-Terminbuchungssystem mit automatischen Erinnerungen und Kalenderintegration",
-      benefits: [
-        "24/7 verfügbare Online-Terminbuchung für Kunden",
-        "Automatische Bestätigungen und Erinnerungen",
-        "Integration mit WhatsApp und E-Mail",
-        "Reduzierung von Terminausfällen um bis zu 70%"
+        "Automatische Erinnerungen nach 1h, 24h, 72h",
+        "Personalisierte Rabattcodes und Anreize",
+        "DSGVO-konform",
+        "Direkte Umsatzsteigerung messbar"
       ],
       image: "/lovable-uploads/454c9234-0608-4281-9e92-85a40ad67e69.png"
     },
     {
-      icon: Search,
-      title: "Dokumentenmanagement",
-      description: "Digitale Verwaltung und automatische Kategorisierung aller Geschäftsdokumente",
+      icon: FileText,
+      title: "Der \"Bestands-Bot\"",
+      description: "Multi-Channel Bestands-Synchronisierung - Echtzeit-Synchronisierung deiner Lagerbestände über alle Verkaufskanäle (Shopify, Amazon, eBay, etc.). Keine Überverkäufe, 100% genaue Daten.",
       benefits: [
-        "Alle Dokumente zentral und durchsuchbar verfügbar",
-        "Automatische Archivierung nach Projektabschluss",
-        "Versionskontrolle und Backup-System",
-        "Zugriff von überall - auch unterwegs"
+        "Echtzeit-Updates über alle Kanäle",
+        "Automatische Fehlerbehandlung",
+        "Reduzierung von Überverkäufen um 100%",
+        "Integration mit allen gängigen Plattformen"
       ],
       image: "/images/analyse.jpg"
     },
     {
       icon: MessageSquare,
-      title: "Kundenkommunikation",
-      description: "Automatisierte E-Mail-Kampagnen und strukturierte Kommunikationsworkflows",
+      title: "Der \"Smarte Chatbot-Berater\"",
+      description: "KI-gestützter Kundenberatungs-Chatbot - 24/7 KI-Chatbot für Kundensupport, Produktberatung und intelligente Empfehlungen. Reduzierung von Support-Tickets um 70%.",
       benefits: [
-        "Personalisierte Follow-up-Nachrichten",
-        "Automatische Zufriedenheitsabfragen",
-        "Integration mit bestehenden E-Mail-Systemen",
-        "Nachfass-Automatisierung für bessere Kundenbindung"
+        "24/7 Verfügbarkeit",
+        "Intelligente Produktempfehlungen",
+        "Automatische Lead-Qualifizierung",
+        "DSGVO-konform mit lokalen Daten"
       ],
       image: "/images/callcenter.png"
     },
     {
-      icon: Users,
-      title: "CRM-Integration",
-      description: "Nahtlose Integration mit führenden CRM-Systemen für optimale Kundenbetreuung",
+      icon: FileText,
+      title: "Der \"Marketing-Content-Generator\"",
+      description: "KI-gestützte Content-Erstellung - Automatische Erstellung von Produktbeschreibungen, Social Media Posts, E-Mail-Kampagnen und Blogartikel mit KI. Zeit sparen, Qualität erhöhen.",
       benefits: [
-        "Automatische Datenübertragung zwischen Systemen",
-        "Lead-Scoring und -Priorisierung",
-        "Verkaufspipeline-Automatisierung",
-        "360°-Kundensicht für besseren Service"
+        "Automatische Produktbeschreibungen",
+        "Social Media Content in Sekunden",
+        "SEO-optimierte Texte",
+        "Markenkonformer Ton"
       ],
       image: "/lovable-uploads/77984400-f083-44ea-8ff7-bd541486e149.png"
+    },
+    {
+      icon: Users,
+      title: "Der \"Kunden-Loyalitäts-Booster\"",
+      description: "Automatisierte Kundenbindung - Personalisierte Follow-ups, Treueprogramme und exklusive Angebote basierend auf Kundenverhalten. Erhöhung des Customer Lifetime Value.",
+      benefits: [
+        "Automatische Personalisierung",
+        "Treuepunkte und Rewards",
+        "Wiederkauf-Automatisierung",
+        "Segmentierte Kampagnen"
+      ],
+      image: "/images/vertrag.png"
     }
   ];
 
@@ -72,10 +72,10 @@ const ServicesSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Unsere <span className="text-orange-600">Kernleistungen</span>
+            Meine <span className="text-orange-600">Kernleistungen</span>
           </h2>
           <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-            Fünf bewährte Automatisierungsbereiche, die sofort spürbare Verbesserungen in Ihrem Betrieb bewirken
+            Fünf bewährte Automatisierungsbereiche für Online-Shops, die sofort spürbare Verbesserungen bewirken
           </p>
         </div>
 

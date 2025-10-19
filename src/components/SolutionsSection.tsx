@@ -19,8 +19,8 @@ const SolutionsSection = () => {
             <span className="text-orange-500">persönlichem Service</span>
           </h2>
           <p className="text-base md:text-lg lg:text-xl text-gray-200 max-w-4xl mx-auto font-open-sans">
-            Wir analysieren Ihre Prozesse, entwickeln individuelle Automatisierungslösungen 
-            und begleiten Sie bis zur erfolgreichen Umsetzung – ohne dass Sie sich um die Technik kümmern müssen.
+            Ich analysiere Ihre Shop-Prozesse, entwickle individuelle Automatisierungslösungen 
+            und begleite Sie bis zur erfolgreichen Umsetzung – ohne dass Sie sich um die Technik kümmern müssen.
           </p>
         </div>
 
@@ -34,7 +34,7 @@ const SolutionsSection = () => {
             </div>
             <h3 className="text-base md:text-lg lg:text-xl font-bold mb-2 md:mb-3 font-montserrat">Analyse</h3>
             <p className="text-gray-200 font-open-sans text-sm md:text-base">
-              Wir identifizieren Ihre zeitraubendsten Prozesse und berechnen Ihr Einsparpotential
+              Ich identifiziere Ihre zeitraubendsten Shop-Prozesse und berechne Ihr Einsparpotential
             </p>
           </div>
 
@@ -54,7 +54,7 @@ const SolutionsSection = () => {
             </div>
             <h3 className="text-base md:text-lg lg:text-xl font-bold mb-2 md:mb-3 font-montserrat">Komplette Umsetzung</h3>
             <p className="text-gray-200 font-open-sans text-sm md:text-base">
-              Wir implementieren alles für Sie – Sie müssen sich um nichts kümmern
+              Ich implementiere alles für Sie – Sie müssen sich um nichts kümmern
             </p>
           </div>
 
@@ -78,25 +78,25 @@ const SolutionsSection = () => {
               Sehen Sie, wie Automatisierung Ihr Unternehmen transformiert
             </h3>
             <p className="text-gray-200 mb-4 md:mb-6 font-open-sans text-sm md:text-base">
-              Erleben Sie anhand realer n8n Workflow-Beispiele, wie ein Handwerksbetrieb durch unsere Lösungen 
-              12 Stunden pro Woche einsparen konnte.
+              Erleben Sie anhand realer n8n Workflow-Beispiele, wie ein Online-Shop durch meine Lösungen 
+              15% Umsatzsteigerung und 12 Stunden pro Woche Zeitersparnis erreichen konnte.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 text-sm max-w-2xl mx-auto">
               <div className="bg-orange-700/20 rounded-lg p-3 text-center">
-                <div className="font-bold text-orange-400">Calendly Integration</div>
-                <div className="text-xs text-gray-300 mt-1">Automatische Terminbuchung</div>
+                <div className="font-bold text-orange-400">Warenkorb-Wiederherstellung</div>
+                <div className="text-xs text-gray-300 mt-1">Automatische Erinnerungen</div>
               </div>
               <div className="bg-orange-700/20 rounded-lg p-3 text-center">
-                <div className="font-bold text-orange-400">E-Mail Workflows</div>
-                <div className="text-xs text-gray-300 mt-1">Intelligente Kommunikation</div>
+                <div className="font-bold text-orange-400">Bestands-Synchronisation</div>
+                <div className="text-xs text-gray-300 mt-1">Multi-Channel Management</div>
               </div>
               <div className="bg-orange-700/20 rounded-lg p-3 text-center">
-                <div className="font-bold text-orange-400">CRM Synchronisation</div>
-                <div className="text-xs text-gray-300 mt-1">Automatische Datenpflege</div>
+                <div className="font-bold text-orange-400">KI-Chatbot</div>
+                <div className="text-xs text-gray-300 mt-1">24/7 Kundensupport</div>
               </div>
               <div className="bg-orange-700/20 rounded-lg p-3 text-center">
-                <div className="font-bold text-orange-400">Rechnungsstellung</div>
-                <div className="text-xs text-gray-300 mt-1">Vollautomatische Abwicklung</div>
+                <div className="font-bold text-orange-400">Content-Generierung</div>
+                <div className="text-xs text-gray-300 mt-1">KI-gestützte Texte</div>
               </div>
             </div>
           </div>

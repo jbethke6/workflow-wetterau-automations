@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 
 const ProblemsSection = () => {
   const problems = [
-    "Verbringen Sie zu viel Zeit mit Angeboten und Rechnungen?",
-    "Frustriert von endlosen E-Mail-Ketten zur Terminvereinbarung?",
-    "Suchen Sie ständig nach wichtigen Dokumenten?",
-    "Verlieren Sie den Überblick über Ihre Kundenkommunikation?",
-    "Fehlt Ihnen die Zeit für konsequente Nachverfolgung von Leads?"
+    "Verlieren Sie Umsatz durch abgebrochene Warenkörbe?",
+    "Frustriert von manueller Bestandsverwaltung über mehrere Kanäle?",
+    "Verbringen Sie zu viel Zeit mit Kundensupport-Anfragen?",
+    "Fehlt Ihnen die Zeit für qualitativ hochwertigen Marketing-Content?",
+    "Verlieren Sie Kunden, weil Sie keine systematische Nachverfolgung haben?"
   ];
 
   return (
@@ -38,8 +38,8 @@ const ProblemsSection = () => {
                 Sie sind nicht allein!
               </h3>
               <p className="text-base lg:text-lg text-gray-600 mb-6 font-open-sans">
-                85% aller Kleinbetriebe verlieren täglich wertvolle Stunden durch vermeidbare Verwaltungsaufgaben. 
-                Dabei könnte diese Zeit viel besser in das Kerngeschäft investiert werden.
+                70% aller Online-Shops verlieren täglich wertvolle Stunden durch manuelle Prozesse und ineffiziente Systeme. 
+                Dabei könnte diese Zeit viel besser in Produktentwicklung und Kundenbindung investiert werden.
               </p>
               <Button 
                 size="lg" 
@@ -54,7 +54,7 @@ const ProblemsSection = () => {
           <div className="order-first lg:order-last">
             <img 
               src="/images/roboarm.png" 
-              alt="Handwerker und Immobilienmakler bei der Arbeit"
+              alt="Online-Shop Automatisierung und E-Commerce Optimierung"
               className="w-full h-64 lg:h-96 object-cover rounded-2xl shadow-lg"
             />
           </div>

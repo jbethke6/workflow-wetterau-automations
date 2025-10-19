@@ -146,13 +146,13 @@ const ContactSection = () => {
                       <SelectValue placeholder="Wählen Sie Ihre Branche" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="handwerk-elektro">Elektrohandwerk</SelectItem>
-                      <SelectItem value="handwerk-sanitaer">Sanitär/Heizung</SelectItem>
-                      <SelectItem value="handwerk-bau">Bauhandwerk</SelectItem>
-                      <SelectItem value="handwerk-kfz">KFZ-Handwerk</SelectItem>
-                      <SelectItem value="handwerk-andere">Anderes Handwerk</SelectItem>
-                      <SelectItem value="immobilien-makler">Immobilienmakler</SelectItem>
-                      <SelectItem value="immobilien-verwaltung">Hausverwaltung</SelectItem>
+                      <SelectItem value="fashion">Fashion & Bekleidung</SelectItem>
+                      <SelectItem value="elektronik">Elektronik & Gadgets</SelectItem>
+                      <SelectItem value="home-deko">Home & Dekoration</SelectItem>
+                      <SelectItem value="beauty">Beauty & Kosmetik</SelectItem>
+                      <SelectItem value="sport">Sport & Fitness</SelectItem>
+                      <SelectItem value="lebensmittel">Lebensmittel & Getränke</SelectItem>
+                      <SelectItem value="spielzeug">Spielzeug & Hobby</SelectItem>
                       <SelectItem value="andere">Andere Branche</SelectItem>
                     </SelectContent>
                   </Select>
@@ -231,21 +231,13 @@ const ContactSection = () => {
                 </h4>
                 <div className="space-y-3 md:space-y-4">
                   <div>
-                    <div className="font-medium text-gray-900">Telefon:</div>
-                    <div className="text-gray-700">+49 (0) 176 / 48981671</div>
-                    <div className="text-xs md:text-sm text-gray-500">Mo-Fr 18:00 - 23:00 Uhr</div>
-                  </div>
-                  <div>
                     <div className="font-medium text-gray-900">E-Mail:</div>
-                    <div className="text-gray-700">info@yami-ai.com</div>
+                    <div className="text-gray-700">justin@yami-ai.com</div>
                   </div>
                   <div>
-                    <div className="font-medium text-gray-900">Büro:</div>
+                    <div className="font-medium text-gray-900">Antwortzeit:</div>
                     <div className="text-gray-700 text-sm md:text-base">
-                      AutoFlow Pro<br />
-                      Justin Bethke<br />
-                      Ortenbergerstr. 22<br />
-                      63674 Altenstadt
+                      Ich antworte normalerweise innerhalb von 24 Stunden
                     </div>
                   </div>
                 </div>
@@ -257,7 +249,7 @@ const ContactSection = () => {
                 </h4>
                 <p className="text-green-700 text-sm md:text-base">
                   Dokumentieren Sie eine Woche lang, wie viel Zeit Sie täglich für 
-                  Rechnungen, E-Mails und Terminkoordination aufwenden. Sie werden überrascht sein!
+                  Kundensupport, Bestandsverwaltung und Marketing-Content aufwenden. Sie werden überrascht sein!
                 </p>
               </Card>
 

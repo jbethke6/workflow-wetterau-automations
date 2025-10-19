@@ -6,38 +6,38 @@ import { Button } from "@/components/ui/button";
 const CaseStudiesSection = () => {
   const caseStudies = [
     {
-      company: "Elektro Müller GmbH",
-      type: "Elektrohandwerksbetrieb",
-      employees: "12 Mitarbeiter",
-      timeSaving: "Von 15 auf 3 Stunden Büroarbeit pro Woche",
-      roi: "ROI nach 4 Monaten",
+      company: "Fashion & Accessoires Shop",
+      type: "Fashion E-Commerce",
+      employees: "3 Mitarbeiter",
+      timeSaving: "Von 5 auf 2 Stunden Kundensupport pro Tag",
+      roi: "ROI nach 3 Monaten",
       improvements: [
-        "Rechnungsstellung innerhalb von 24h statt 14 Tagen",
-        "30% schnellere Zahlungseingänge",
-        "25% mehr Kundentermine",
-        "Fehlerfreie Dateneingabe"
+        "Warenkorb-Wiederherstellungsrate von 2% auf 8%",
+        "Chatbot beantwortet 70% aller Kundenfragen automatisch",
+        "Umsatzsteigerung von 25% in 6 Monaten",
+        "Durchschnittlicher Bestellwert um 15% gestiegen"
       ],
-      quote: "Früher habe ich meine Abende und Wochenenden mit Papierkram verbracht. Heute kann ich mich auf mein Kerngeschäft konzentrieren und habe sogar wieder Zeit für meine Familie.",
-      author: "Thomas Müller, Geschäftsführer",
+      quote: "Unser Chatbot hat unseren Support revolutioniert. Wir können jetzt viel mehr Kunden betreuen, ohne zusätzliches Personal einzustellen.",
+      author: "Sarah M., Shop-Inhaberin",
       color: "blue",
-      image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400&h=300&fit=crop&crop=center"
+      image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=400&h=300&fit=crop&crop=center"
     },
     {
-      company: "ImmoVision Wetterau",
-      type: "Immobilienmakler",
+      company: "Elektronik & Gadgets Online-Shop",
+      type: "Elektronik E-Commerce",
       employees: "5 Mitarbeiter",
-      timeSaving: "40% mehr Besichtigungstermine",
-      roi: "35% Umsatzsteigerung in 6 Monaten",
+      timeSaving: "15% mehr Umsatz durch intelligente Produktempfehlungen",
+      roi: "ROI nach 2 Monaten",
       improvements: [
-        "Vereinfachte Online-Terminbuchung",
-        "60% höhere Konversionsrate",
-        "12h Zeitersparnis pro Woche",
-        "Konsistente Kundenkommunikation"
+        "Durchschnittlicher Bestellwert um 18% gestiegen",
+        "Bestandsverwaltung über 3 Kanäle automatisiert",
+        "Fehlerquote bei Bestandsverwaltung auf 0% reduziert",
+        "12h Zeitersparnis pro Woche bei Bestandspflege"
       ],
-      quote: "Die Automatisierung hat unser Geschäft revolutioniert. Wir können jetzt viel mehr Objekte betreuen, ohne zusätzliches Personal einzustellen.",
-      author: "Sarah Weber, Inhaberin",
+      quote: "Mit dem Bestands-Bot und dem Cross-Sell-Assistenten haben wir unseren Umsatz deutlich gesteigert, ohne mehr Zeit in die Verwaltung zu investieren.",
+      author: "Michael K., Geschäftsführer",
       color: "orange",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop&crop=center"
+      image: "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=400&h=300&fit=crop&crop=center"
     }
   ];
 
@@ -46,10 +46,10 @@ const CaseStudiesSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 font-montserrat">
-            Erfolgsgeschichten unserer Kunden
+            Erfolgsgeschichten meiner Kunden
           </h2>
           <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto font-open-sans px-4">
-            Reale Ergebnisse von Unternehmen aus der Wetterau, die ihre Prozesse erfolgreich automatisiert haben
+            Reale Ergebnisse von Online-Shops, die ihre Prozesse erfolgreich automatisiert haben
           </p>
         </div>
 

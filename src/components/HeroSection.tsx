@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown } from 'lucide-react';
 import CalendlyBooking from './CalendlyBooking';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import heroImage from '@/assets/hero-ecommerce.jpg';
 
 const HeroSection = () => {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
@@ -29,15 +30,15 @@ const HeroSection = () => {
               className={`space-y-4 lg:space-y-8 text-center lg:text-left scroll-animate-left ${heroVisible ? 'animate' : ''} mobile-no-overflow`}
             >
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight font-montserrat mobile-no-overflow">
-                Automatisieren Sie Ihre{' '}
-                <span className="text-orange-500">Bürokratie</span>,<br />
-                konzentrieren Sie sich auf Ihr{' '}
-                <span className="text-orange-500">Handwerk</span>.
+                Automatisieren Sie Ihren{' '}
+                <span className="text-orange-500">Online-Shop</span>,<br />
+                konzentrieren Sie sich auf{' '}
+                <span className="text-orange-500">Wachstum</span>.
               </h1>
               
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed font-open-sans mobile-no-overflow">
                 Gewinnen Sie <strong className="text-white">10 Stunden pro Woche</strong> zurück für das, was wirklich zählt – 
-                mit maßgeschneiderten Automatisierungslösungen für Handwerks- und Immobilienbetriebe in der Wetterau.
+                mit maßgeschneiderten Automatisierungslösungen für Online-Shops. Von Warenkorb-Optimierung bis KI-Chatbots.
               </p>
 
               <div className="flex flex-col gap-3 justify-center lg:justify-start mobile-no-overflow">
@@ -46,15 +47,15 @@ const HeroSection = () => {
                   className="bg-orange-800 hover:bg-orange-900 text-white px-4 sm:px-6 lg:px-8 py-3 lg:py-4 text-sm sm:text-base lg:text-lg font-semibold font-montserrat w-full sm:w-auto mobile-no-overflow"
                   onClick={handleBookingClick}
                 >
-                  Beratung vereinbaren
+                  Kostenlose Analyse
                 </Button>
                 <Button 
                   variant="outline" 
                   size="lg" 
                   className="border-2 border-white text-white hover:bg-white hover:text-gray-800 bg-transparent px-4 sm:px-6 lg:px-8 py-3 lg:py-4 text-sm sm:text-base lg:text-lg font-montserrat transition-colors duration-300 w-full sm:w-auto mobile-no-overflow"
-                  onClick={() => document.getElementById('solutions')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Wie wir Ihnen 10h/Woche sparen
+                  Meine Services
                   <ArrowDown className="ml-2 h-4 w-4 lg:h-5 lg:w-5" />
                 </Button>
               </div>
@@ -64,8 +65,8 @@ const HeroSection = () => {
             <div className={`relative order-first lg:order-last scroll-animate-right ${heroVisible ? 'animate' : ''} mobile-no-overflow`}>
               <div className="relative rounded-2xl overflow-hidden shadow-2xl float-animation mobile-no-overflow">
                 <img 
-                  src="/lovable-uploads/a3ae3069-fb9b-4634-999f-33a6fa48c0ba.png" 
-                  alt="Futuristische Büroautomatisierung mit KI und digitalen Workflows"
+                  src={heroImage}
+                  alt="E-Commerce Automatisierung - Online-Shop Dashboard mit KI-gestützten Workflows"
                   className="w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover mobile-no-overflow"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent"></div>

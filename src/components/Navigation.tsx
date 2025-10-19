@@ -37,9 +37,6 @@ const Navigation = () => {
                 alt="AutoFlow Pro Logo" 
                 className="h-8 w-8 lg:h-10 lg:w-10"
               />
-              <div className="text-lg lg:text-2xl font-bold text-gray-700 font-montserrat mobile-no-overflow">
-                AutoFlow<span className="text-orange-800">Pro</span>
-              </div>
             </div>
 
             {/* Desktop Navigation */}
@@ -61,7 +58,7 @@ const Navigation = () => {
                 className="bg-orange-800 hover:bg-orange-900 text-white px-4 lg:px-6 py-2 font-montserrat text-sm lg:text-base"
                 onClick={handleBookingClick}
               >
-                Kostenlose Beratung
+                Kostenlose Analyse
               </Button>
             </div>
 
@@ -95,7 +92,7 @@ const Navigation = () => {
                   className="bg-orange-800 hover:bg-orange-900 text-white w-full font-montserrat mobile-no-overflow"
                   onClick={handleBookingClick}
                 >
-                  Kostenlose Beratung
+                  Kostenlose Analyse
                 </Button>
               </div>
             </div>

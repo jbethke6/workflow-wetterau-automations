@@ -32,7 +32,7 @@ const BenefitsSection = () => {
             Ihre Vorteile auf einen Blick
           </h2>
           <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto font-open-sans px-4">
-            Automatisierung ist keine Zukunftsmusik – sie funktioniert heute und bringt sofortige Ergebnisse
+            Automatisierung für Online-Shops ist keine Zukunftsmusik – sie funktioniert heute und bringt sofortige Ergebnisse
           </p>
         </div>
 
