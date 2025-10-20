@@ -212,7 +212,7 @@ const ContactSection = () => {
                   </li>
                   <li className="flex items-start">
                     <div className="bg-blue-500 rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></div>
-                    <span className="text-gray-700 text-sm md:text-base">Konkretes Einsparpotential in Stunden und Euro</span>
+                    <span className="text-gray-700 text-sm md:text-base">Individuelle Automatisierungskonzepte für Ihren Shop</span>
                   </li>
                   <li className="flex items-start">
                     <div className="bg-blue-500 rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></div>

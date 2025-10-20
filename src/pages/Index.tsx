@@ -7,7 +7,7 @@ import HeroSection from '../components/HeroSection';
 import BenefitsSection from '../components/BenefitsSection';
 import SolutionsSection from '../components/SolutionsSection';
 import ServicesSection from '../components/ServicesSection';
-import WorkflowExamplesSection from '../components/WorkflowExamplesSection';
+import AboutSection from '../components/AboutSection';
 import ContactSection from '../components/ContactSection';
 import Navigation from '../components/Navigation';
 import ChatbotAssistant from '../components/ChatbotAssistant';
@@ -20,7 +20,7 @@ const Index = () => {
       <BenefitsSection />
       <SolutionsSection />
       <ServicesSection />
-      <WorkflowExamplesSection />
+      <AboutSection />
       <ContactSection />
       <ChatbotAssistant />
     </div>

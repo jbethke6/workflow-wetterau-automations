@@ -9,10 +9,11 @@ const Navigation = () => {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
 
   const navItems = [
-    { label: 'Startseite', href: '#home' },
-    { label: 'Lösungen', href: '#solutions' },
-    { label: 'Services', href: '#services' },
-    { label: 'Kontakt', href: '#contact' }
+    { label: 'Startseite', href: '/' },
+    { label: 'Services', href: '/#services' },
+    { label: 'Über mich', href: '/#about' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Kontakt', href: '/#contact' }
   ];
 
   const handleBookingClick = () => {

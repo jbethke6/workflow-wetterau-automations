@@ -9,7 +9,6 @@ import heroImage from '@/assets/hero-ecommerce.jpg';
 const HeroSection = () => {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
-  const { ref: statsRef, isVisible: statsVisible } = useScrollAnimation();
 
   const handleBookingClick = () => {
     setIsCalendlyOpen(true);
@@ -74,29 +73,6 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Enhanced Statistics Cards */}
-          <div 
-            ref={statsRef}
-            className={`mt-8 lg:mt-16 scroll-animate-scale ${statsVisible ? 'animate' : ''} mobile-no-overflow`}
-          >
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6 max-w-5xl mx-auto mobile-no-overflow">
-              <div className={`stat-card rounded-2xl p-4 lg:p-6 text-center pulse-glow scroll-animate scroll-animate-stagger-1 ${statsVisible ? 'animate' : ''} mobile-no-overflow`}>
-                <div className="text-3xl lg:text-4xl font-bold text-orange-800 font-montserrat mb-2">10h</div>
-                <div className="text-sm lg:text-base text-gray-700 font-open-sans font-medium">Zeit gespart pro Woche</div>
-                <div className="text-xs text-gray-500 mt-1">Durchschnittliche Einsparung</div>
-              </div>
-              <div className={`stat-card rounded-2xl p-4 lg:p-6 text-center pulse-glow scroll-animate scroll-animate-stagger-2 ${statsVisible ? 'animate' : ''} mobile-no-overflow`}>
-                <div className="text-3xl lg:text-4xl font-bold text-orange-800 font-montserrat mb-2">60%</div>
-                <div className="text-sm lg:text-base text-gray-700 font-open-sans font-medium">Kosteneinsparung</div>
-                <div className="text-xs text-gray-500 mt-1">Bei Büroarbeiten</div>
-              </div>
-              <div className={`stat-card rounded-2xl p-4 lg:p-6 text-center pulse-glow scroll-animate scroll-animate-stagger-3 ${statsVisible ? 'animate' : ''} mobile-no-overflow`}>
-                <div className="text-3xl lg:text-4xl font-bold text-orange-800 font-montserrat mb-2">90%</div>
-                <div className="text-sm lg:text-base text-gray-700 font-open-sans font-medium">Weniger Fehler</div>
-                <div className="text-xs text-gray-500 mt-1">Durch Automatisierung</div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
