@@ -13,6 +13,7 @@ const Navigation = () => {
     { label: 'Services', href: '/#services' },
     { label: 'Über mich', href: '/#about' },
     { label: 'Blog', href: '/blog' },
+    { label: 'Termin buchen', href: '#', onClick: () => setIsCalendlyOpen(true) },
     { label: 'Kontakt', href: '/#contact' }
   ];
 
@@ -42,13 +43,26 @@ const Navigation = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
               {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="text-gray-600 hover:text-orange-800 font-medium transition-colors font-open-sans text-sm lg:text-base"
-                >
-                  {item.label}
-                </a>
+                item.onClick ? (
+                  <button
+                    key={item.label}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      item.onClick();
+                    }}
+                    className="text-gray-600 hover:text-orange-800 font-medium transition-colors font-open-sans text-sm lg:text-base"
+                  >
+                    {item.label}
+                  </button>
+                ) : (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className="text-gray-600 hover:text-orange-800 font-medium transition-colors font-open-sans text-sm lg:text-base"
+                  >
+                    {item.label}
+                  </a>
+                )
               ))}
             </div>
 
@@ -79,14 +93,28 @@ const Navigation = () => {
             <div className="md:hidden pb-4 mobile-no-overflow">
               <div className="flex flex-col space-y-4 mobile-no-overflow">
                 {navItems.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    className="text-gray-600 hover:text-orange-800 font-medium font-open-sans mobile-no-overflow"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.label}
-                  </a>
+                  item.onClick ? (
+                    <button
+                      key={item.label}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        item.onClick();
+                        setIsMenuOpen(false);
+                      }}
+                      className="text-gray-600 hover:text-orange-800 font-medium font-open-sans mobile-no-overflow text-left"
+                    >
+                      {item.label}
+                    </button>
+                  ) : (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      className="text-gray-600 hover:text-orange-800 font-medium font-open-sans mobile-no-overflow"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.label}
+                    </a>
+                  )
                 ))}
                 <Button 
                   className="bg-orange-800 hover:bg-orange-900 text-white w-full font-montserrat mobile-no-overflow"

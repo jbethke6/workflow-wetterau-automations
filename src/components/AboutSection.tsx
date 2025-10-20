@@ -37,7 +37,7 @@ const AboutSection = () => {
                   Justin Bethke
                 </h3>
                 <p className="text-lg text-orange-700 font-medium mb-4">
-                  KI-Automatisierungs-Experte für Online-Shops
+                  Gründer von Yami-AI
                 </p>
               </div>
 
