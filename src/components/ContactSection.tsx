@@ -232,7 +232,7 @@ const ContactSection = () => {
                 <div className="space-y-3 md:space-y-4">
                   <div>
                     <div className="font-medium text-gray-900">E-Mail:</div>
-                    <div className="text-gray-700">justin@yami-ai.com</div>
+                    <div className="text-gray-700">bethke@yami-ai.com</div>
                   </div>
                   <div>
                     <div className="font-medium text-gray-900">Antwortzeit:</div>
