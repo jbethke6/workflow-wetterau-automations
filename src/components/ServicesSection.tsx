@@ -18,7 +18,8 @@ const ServicesSection = () => {
         "DSGVO-konform",
         "Direkte Umsatzsteigerung messbar"
       ],
-      image: "/lovable-uploads/454c9234-0608-4281-9e92-85a40ad67e69.png"
+      image: "/images/Shop MAgnet.jpg"
+      // workflowImage: weglassen (noch kein Bild)
     },
     {
       icon: FileText,
@@ -30,7 +31,8 @@ const ServicesSection = () => {
         "Reduzierung von Überverkäufen um 100%",
         "Integration mit allen gängigen Plattformen"
       ],
-      image: "/images/analyse.jpg"
+      image: "/images/Warenbestand.jpg"
+      // workflowImage: weglassen (noch kein Bild)
     },
     {
       icon: MessageSquare,
@@ -42,7 +44,8 @@ const ServicesSection = () => {
         "Automatische Lead-Qualifizierung",
         "DSGVO-konform mit lokalen Daten"
       ],
-      image: "/images/callcenter.png"
+      image: "/images/Chatbot 1.jpg",
+      workflowImage: "/images/Chatbot-Workflow.png"
     },
     {
       icon: FileText,
@@ -54,7 +57,8 @@ const ServicesSection = () => {
         "SEO-optimierte Texte",
         "Markenkonformer Ton"
       ],
-      image: "/lovable-uploads/77984400-f083-44ea-8ff7-bd541486e149.png"
+      image: "/images/Contentautomation.jpg"
+      // workflowImage: weglassen (noch kein Bild)
     },
     {
       icon: Users,
@@ -66,7 +70,8 @@ const ServicesSection = () => {
         "Wiederkauf-Automatisierung",
         "Segmentierte Kampagnen"
       ],
-      image: "/images/vertrag.png"
+      image: "/images/Cloud Senden.jpg"
+      // workflowImage: weglassen (noch kein Bild)
     }
   ];
 
@@ -145,6 +150,7 @@ const ServicesSection = () => {
           title={services[selectedService].title}
           description={services[selectedService].description}
           benefits={services[selectedService].benefits}
+          workflowImage={services[selectedService].workflowImage}
         />
       )}
     </section>

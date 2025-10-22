@@ -10,7 +10,20 @@ const ChatbotAssistant = () => {
   const [messages, setMessages] = useState<Array<{id: number; text: string; sender: string; timestamp: Date}>>([]);
   const [inputMessage, setInputMessage] = useState("");
   const [isTyping, setIsTyping] = useState(false);
-  const wsRef = useRef<WebSocket | null>(null);
+  const [sessionId, setSessionId] = useState<string>('');
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // n8n Webhook URL
+  const N8N_WEBHOOK_URL = 'https://n8n.srv1004859.hstgr.cloud/webhook/chat-message';
+
+  // Scrollt immer zur neuesten Nachricht
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   // Proaktive Begrüßung nach 10 Sekunden
   useEffect(() => {
@@ -18,38 +31,50 @@ const ChatbotAssistant = () => {
       if (!hasGreeted && !isOpen) {
         setIsOpen(true);
         setHasGreeted(true);
-        setMessages([{
-          id: 1,
-          text: "Hallo! Ich bin der Yami-AI Assistent. Ich kann Ihnen bei Fragen zu Shop-Automatisierung helfen oder direkt einen Termin für Sie buchen. Wie kann ich Ihnen helfen?",
-          sender: "bot",
-          timestamp: new Date()
-        }]);
+        // Starte mit n8n Begrüßung
+        handleWelcomeMessage();
       }
     }, 10000);
 
     return () => clearTimeout(timer);
   }, [hasGreeted, isOpen]);
 
-  // n8n WebSocket Connection
-  useEffect(() => {
-    if (isOpen && !wsRef.current) {
-      // TODO: Replace with your n8n webhook URL
-      // wsRef.current = new WebSocket('wss://your-n8n-instance.com/webhook/chat');
-      
-      // For now, we'll use a mock connection
-      console.log('Chatbot ready - connect to n8n webhook here');
-    }
+  const handleWelcomeMessage = async () => {
+    try {
+      const response = await fetch('https://n8n.srv1004859.hstgr.cloud/webhook/chat-welcome', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      });
 
-    return () => {
-      if (wsRef.current) {
-        wsRef.current.close();
+      const data = await response.json();
+      
+      if (data.success) {
+        setSessionId(data.sessionId);
+        setMessages([{
+          id: 1,
+          text: data.message,
+          sender: "bot",
+          timestamp: new Date()
+        }]);
       }
-    };
-  }, [isOpen]);
+    } catch (error) {
+      console.error('Fehler beim Begrüßungs-Webhook:', error);
+      // Fallback lokale Begrüßung
+      setMessages([{
+        id: 1,
+        text: "Hallo! Ich bin der Yami-Al Assistant. Ich kann Ihnen bei Fragen zu Shop-Automatisierung helfen oder direkt einen Termin für Sie buchen. Wie kann ich Ihnen helfen?",
+        sender: "bot",
+        timestamp: new Date()
+      }]);
+    }
+  };
 
   const handleSendMessage = async () => {
     if (!inputMessage.trim()) return;
 
+    // Benutzer-Nachricht hinzufügen
     const userMessage = {
       id: messages.length + 1,
       text: inputMessage,
@@ -61,44 +86,80 @@ const ChatbotAssistant = () => {
     setInputMessage("");
     setIsTyping(true);
 
-    // TODO: Send to n8n webhook
-    // For now, simple mock responses
-    setTimeout(() => {
-      let botResponse = "";
-      const input = inputMessage.toLowerCase();
-      
-      if (input.includes("termin") || input.includes("beratung") || input.includes("buchen")) {
-        botResponse = "Gerne! Welches Datum würde Ihnen passen? Ich zeige Ihnen gleich meine verfügbaren Zeiten an.";
-      } else if (input.includes("preis") || input.includes("kosten")) {
-        botResponse = "Ich erstelle individuelle Angebote basierend auf Ihren Anforderungen. Möchten Sie einen kurzen Termin vereinbaren, damit ich Ihre Bedürfnisse besser verstehe?";
-      } else if (input.includes("automatisierung") || input.includes("workflow")) {
-        botResponse = "Ich biete verschiedene Automatisierungen an: Warenkorb-Recovery, Bestands-Synchronisierung, KI-Chatbots und mehr. Welcher Bereich interessiert Sie am meisten?";
+    try {
+      // Nachricht an n8n senden
+      const response = await fetch(N8N_WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message: inputMessage,
+          sessionId: sessionId || `session_${Date.now()}`,
+          history: messages.map(msg => ({
+            role: msg.sender === 'user' ? 'user' : 'assistant',
+            content: msg.text
+          }))
+        })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Session ID speichern falls neu
+        if (data.sessionId && !sessionId) {
+          setSessionId(data.sessionId);
+        }
+
+        // Bot-Antwort hinzufügen
+        const botMessage = {
+          id: messages.length + 2,
+          text: data.message,
+          sender: "bot",
+          timestamp: new Date()
+        };
+
+        setMessages(prev => [...prev, botMessage]);
+
+        // Terminbuchung automatisch öffnen falls benötigt
+        if (data.availableSlots && data.availableSlots.length > 0) {
+          setTimeout(() => {
+            const bookingSection = document.getElementById('booking');
+            if (bookingSection) {
+              bookingSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 500);
+        }
       } else {
-        botResponse = "Das ist eine interessante Frage. Lassen Sie uns das in einem kurzen Gespräch klären. Soll ich einen Termin für Sie buchen?";
+        throw new Error('n8n Response war nicht erfolgreich');
       }
 
+    } catch (error) {
+      console.error('Fehler mit n8n:', error);
+      // Fallback: Lokale Antwort
       const botMessage = {
         id: messages.length + 2,
-        text: botResponse,
+        text: "Entschuldigung, der KI-Assistent ist gerade nicht erreichbar. Bitte versuchen Sie es später noch einmal oder kontaktieren Sie uns direkt.",
         sender: "bot",
         timestamp: new Date()
       };
-
       setMessages(prev => [...prev, botMessage]);
+    } finally {
       setIsTyping(false);
-    }, 1000);
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleSendMessage();
+    }
   };
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
-    if (!hasGreeted) {
+    if (!isOpen && messages.length === 0) {
       setHasGreeted(true);
-      setMessages([{
-        id: 1,
-        text: "Hallo! Ich bin der Yami-AI Assistent. Wie kann ich Ihnen helfen?",
-        sender: "bot",
-        timestamp: new Date()
-      }]);
+      handleWelcomeMessage();
     }
   };
 
@@ -127,10 +188,10 @@ const ChatbotAssistant = () => {
                     <MessageCircle className="h-4 w-4" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-base">Yami-AI Assistent</h4>
+                    <h4 className="font-semibold text-base">Yami-Al Assistant</h4>
                     <div className="flex items-center text-xs text-orange-100">
                       <div className="w-2 h-2 bg-green-400 rounded-full mr-1"></div>
-                      Online
+                      KI-Powered
                     </div>
                   </div>
                 </div>
@@ -159,7 +220,10 @@ const ChatbotAssistant = () => {
                         : 'bg-white text-gray-800 shadow-sm'
                     }`}
                   >
-                    <p className="text-sm">{message.text}</p>
+                    <p className="text-sm whitespace-pre-line">{message.text}</p>
+                    <span className="text-xs opacity-70 block mt-1">
+                      {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                    </span>
                   </div>
                 </div>
               ))}
@@ -174,6 +238,7 @@ const ChatbotAssistant = () => {
                   </div>
                 </div>
               )}
+              <div ref={messagesEndRef} />
             </div>
 
             {/* Input Area */}
@@ -183,19 +248,20 @@ const ChatbotAssistant = () => {
                   value={inputMessage}
                   onChange={(e) => setInputMessage(e.target.value)}
                   placeholder="Ihre Nachricht..."
-                  onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+                  onKeyPress={handleKeyPress}
                   className="flex-1 text-sm"
                 />
                 <Button
                   onClick={handleSendMessage}
+                  disabled={!inputMessage.trim() || isTyping}
                   size="sm"
-                  className="bg-orange-700 hover:bg-orange-800"
+                  className="bg-orange-700 hover:bg-orange-800 disabled:opacity-50"
                 >
                   <Send className="h-4 w-4" />
                 </Button>
               </div>
               <p className="text-xs text-gray-500 mt-2">
-                Powered by n8n & KI
+                Powered by n8n & Claude AI
               </p>
             </div>
           </Card>

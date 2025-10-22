@@ -8,9 +8,10 @@ interface ServiceModalProps {
   title: string;
   description: string;
   benefits: string[];
+  workflowImage?: string; // ← NEU: Optionales Workflow-Bild
 }
 
-const ServiceModal = ({ isOpen, onClose, title, description, benefits }: ServiceModalProps) => {
+const ServiceModal = ({ isOpen, onClose, title, description, benefits, workflowImage }: ServiceModalProps) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
@@ -33,16 +34,25 @@ const ServiceModal = ({ isOpen, onClose, title, description, benefits }: Service
             </ul>
           </div>
           
-          <div className="bg-gray-50 rounded-lg p-6">
+                    <div className="bg-gray-50 rounded-lg p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">n8n Workflow Beispiel</h3>
-            <div className="bg-white rounded-lg border-2 border-dashed border-gray-300 p-8 text-center">
-              <p className="text-gray-500">
-                Hier wird später ein Screenshot oder Video des n8n Workflows eingefügt.
-              </p>
-              <p className="text-sm text-gray-400 mt-2">
-                Platzhalter für Workflow-Visualisierung
-              </p>
-            </div>
+            
+            {/* HIER KOMMT DAS WORKFLOW-BILD */}
+            {workflowImage ? (
+              <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                <img 
+                  src={workflowImage} 
+                  alt={`n8n Workflow für ${title}`}
+                  className="w-full h-auto rounded-lg"
+                />
+              </div>
+            ) : (
+              <div className="bg-white rounded-lg border-2 border-dashed border-gray-300 p-8 text-center">
+                <p className="text-gray-500">
+                  Workflow-Screenshot in Arbeit - folgt bald!
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </DialogContent>
